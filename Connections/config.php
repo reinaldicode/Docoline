@@ -1,8 +1,8 @@
 <?php
 // Pastikan parameter koneksi benar
 $host = 'localhost';
-$username = 'admin';  // atau username lain
-$password = 'asdf123!';      // password database Anda
+$username = 'root';  // atau username lain
+$password = '';      // password database Anda
 $database = 'doc';   // nama database
 
 try {
