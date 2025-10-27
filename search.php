@@ -108,6 +108,7 @@ function buildFuzzyWhereClause($field, $keyword, $link) {
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search Dokumen</title>
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -121,7 +122,8 @@ function buildFuzzyWhereClause($field, $keyword, $link) {
             background-image: url("images/white.jpeg"); 
             background-color: #cccccc; 
             background-repeat: no-repeat; 
-            background-attachment: fixed; 
+            background-attachment: fixed;
+            padding-top: 120px; /* Beri ruang untuk navbar fixed */
         }
         .search-card { 
             background: #fff; 
@@ -185,6 +187,7 @@ function buildFuzzyWhereClause($field, $keyword, $link) {
         }
         
         @media(max-width:767px){
+            body { padding-top: 150px; }
             .search-card { padding:12px; }
             .controls .btn { margin-bottom:8px; }
         }
@@ -203,7 +206,6 @@ function buildFuzzyWhereClause($field, $keyword, $link) {
     </script>
 </head>
 <body>
-<br/><br/>
 
 <div class="container">
     <div class="search-card">
@@ -467,8 +469,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     <?php if ($isAdmin): ?>
                     <th>Action</th>
                     <?php endif; ?>
-                    <?php if ($isAdmin || $isOriginator): ?>
-                    <th>Sosialisasi</th>
+                    <?php if ($isLoggedIn): /* ✅ Kolom Evidence tampil untuk SEMUA user yang login */ ?>
+                    <th>Evidence</th>
                     <?php endif; ?>
                 </tr>
             </thead>
@@ -532,21 +534,32 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                         echo '</td>';
                     }
                     
-                    if ($isAdmin || $isOriginator) {
+                    // ===== KOLOM EVIDENCE - SOLUSI CONFLICT ✅ =====
+                    if ($isLoggedIn) { 
                         echo '<td style="white-space:nowrap;">';
+                        
                         if ($has_sos) {
-                            echo '<a href="lihat_sosialisasi.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Sosialisasi">
+                            // ✅ Jika SUDAH ada file: Semua user yang login bisa "Lihat"
+                            echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">
                                     <span class="glyphicon glyphicon-file"></span> Lihat
                                   </a>';
                         } else {
-                            echo '<button type="button"
-                                    class="btn btn-xs btn-success btn-upload-sos"
-                                    data-drf="'.htmlspecialchars($row['no_drf']).'"
-                                    data-nodoc="'.htmlspecialchars($row['no_doc']).'"
-                                    title="Upload Bukti Sosialisasi">
-                                    <span class="glyphicon glyphicon-upload"></span> Upload
-                                  </button>';
+                            // ✅ Jika BELUM ada file:
+                            if ($isAdmin || $isOriginator) {
+                                // Admin & Originator: Tampilkan tombol "Upload"
+                                echo '<button type="button"
+                                        class="btn btn-xs btn-success btn-upload-sos"
+                                        data-drf="'.htmlspecialchars($row['no_drf']).'"
+                                        data-nodoc="'.htmlspecialchars($row['no_doc']).'"
+                                        title="Upload Evidence">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                      </button>';
+                            } else {
+                                // Approver & PIC: Tampilkan pesan "Belum ada"
+                                echo '<span class="text-muted" style="font-size:11px;">Belum ada</span>';
+                            }
                         }
+                        
                         echo '</td>';
                     }
                     
@@ -615,17 +628,18 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </div>
 <?php endif; ?>
 
-<?php if ($isAdmin || $isOriginator): ?>
+<?php if ($isAdmin || $isOriginator): /* ✅ Modal HANYA untuk Admin & Originator */ ?>
+<!-- ===== MODAL UPLOAD EVIDENCE (ADMIN & ORIGINATOR ONLY) ===== -->
 <div class="modal fade" id="modalSosialisasi" tabindex="-1" role="dialog" aria-labelledby="modalSosLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="POST" action="upload_sosialisasi.php" enctype="multipart/form-data">
+            <form method="POST" action="upload_Evidence.php" enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="modalSosLabel">Upload Bukti Sosialisasi</h4>
+                    <h4 class="modal-title" id="modalSosLabel">Upload Evidence</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Upload bukti sosialisasi untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
+                    <p>Upload Evidence untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
                     <input type="hidden" name="drf" id="modal_upload_drf" value="">
                     <?php
                     if (empty($_SESSION['csrf_token'])) {
@@ -643,12 +657,12 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     </div>
                     <div class="form-group">
                         <label>Catatan / Keterangan</label>
-                        <textarea name="notes" class="form-control" rows="3" placeholder="Tuliskan catatan atau keterangan sosialisasi..."></textarea>
+                        <textarea name="notes" class="form-control" rows="3" placeholder="Tuliskan catatan atau keterangan evidence..."></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                    <button type="submit" name="upload_sosialisasi" class="btn btn-success">Upload</button>
+                    <button type="submit" name="upload_evidence" class="btn btn-success">Upload</button>
                 </div>
             </form>
         </div>
@@ -693,7 +707,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         });
     }
 
-    <?php if ($isAdmin || $isOriginator): ?>
+    <?php if ($isAdmin || $isOriginator): /* ✅ Modal handlers HANYA untuk Admin & Originator */ ?>
+    // Modal handlers (hanya untuk Admin & Originator)
     document.addEventListener('click', function(e){
         <?php if ($isAdmin): ?>
         if (e.target.closest('.sec-file')) {
@@ -704,6 +719,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         }
         <?php endif; ?>
         
+        // Modal Upload Evidence (Admin & Originator only)
         if (e.target.closest('.btn-upload-sos')) {
             e.preventDefault();
             $('#modalSosialisasi').find('form')[0].reset();
@@ -720,4 +736,4 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </script>
 
 </body>
-</html>" 
+</html>

@@ -266,7 +266,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
             <th>Device</th>
             <th>Process</th>
             <th>Action</th>
-            <th>Sosialisasi</th>
+            <th>Evidence</th>
           </tr>
         </thead>
         <tbody>
@@ -305,11 +305,11 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
               // Kolom Sosialisasi
               echo '<td>';
               if ($has_sos) {
-                  echo '<a href="lihat_sosialisasi.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Sosialisasi">';
+                  echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">';
                   echo '<span class="glyphicon glyphicon-file"></span>';
                   echo '</a>';
               } else {
-                  echo '<a href="lihat_sosialisasi.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-default" title="Belum ada bukti sosialisasi">';
+                  echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-default" title="Belum ada evidence">';
                   echo '<span class="glyphicon glyphicon-file"></span>';
                   echo '</a>';
               }
