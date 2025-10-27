@@ -346,6 +346,7 @@ function renderTableRow($info, $nrp, $state, $tipe, $section_type, $index) {
     $esc = [
         'tgl_upload' => escapeHtml($info['tgl_upload']),
         'no_drf' => escapeHtml($info['no_drf']),
+        'user_id' => escapeHtml($info['user_id']),
         'no_doc' => escapeHtml($info['no_doc']),
         'no_rev' => escapeHtml($info['no_rev']),
         'title' => escapeHtml($info['title']),
@@ -371,6 +372,7 @@ function renderTableRow($info, $nrp, $state, $tipe, $section_type, $index) {
         <td><?php echo $index; ?></td>
         <td><?php echo $esc['tgl_upload']; ?></td>
         <td><?php echo $esc['no_drf']; ?></td>
+        <td><?php echo $esc['user_id'];?></td>
         <td><?php echo $esc['no_doc']; ?></td>
         <td><?php echo $esc['no_rev']; ?></td>
         <td>
@@ -485,6 +487,7 @@ function renderDocumentTable($result, $nrp, $state, $tipe, $section_type = '') {
                     <th width="40">No</th>
                     <th width="100">Date</th>
                     <th width="80">No. DRF</th>
+                    <th width="100">User ID</th>
                     <th width="150">No Document</th>
                     <th width="50">Rev.</th>
                     <th>Title</th>

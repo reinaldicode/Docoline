@@ -4,8 +4,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $mssqlHost = "localhost";
-$mssqlUser = "admin";
-$mssqlPass = "asdf123!";
+$mssqlUser = "root";
+$mssqlPass = "";
 $mssqlDB   = "doc";
 
 // koneksi

@@ -10,24 +10,99 @@ $isOriginator = $isLoggedIn && (isset($_SESSION['state']) && $_SESSION['state'] 
 
 // Jika tidak login, set mode public (read-only)
 if (!$isLoggedIn) {
-    // Public mode: Include header tanpa session check
     if (file_exists('header_public.php')) {
         include('header_public.php');
     } else {
-        // Fallback jika header_public.php tidak ada
         include('header.php');
     }
 } else {
-    // Logged in mode: Include header normal
     include('header.php');
 }
 
 include 'koneksi.php';
 require_once('Connections/config.php');
 
-// Ambil session state untuk menentukan role user (backward compatibility)
 $state = $isLoggedIn && isset($_SESSION['state']) ? $_SESSION['state'] : '';
 $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
+
+// ===== FUZZY SEARCH HELPER FUNCTIONS =====
+/**
+ * Normalize string untuk pencarian fuzzy
+ * Menghapus karakter khusus, spasi berlebih, dan lowercase
+ */
+function normalizeString($str) {
+    $str = strtolower(trim($str));
+    // Hapus karakter non-alfanumerik kecuali dash dan underscore
+    $str = preg_replace('/[^a-z0-9\-_]/', '', $str);
+    return $str;
+}
+
+/**
+ * Generate pattern pencarian fuzzy untuk LIKE query
+ * Contoh: "o-w-ffd1_jk-1" -> "%o%w%ffd1%jk%1%"
+ */
+function generateFuzzyPattern($keyword) {
+    $normalized = normalizeString($keyword);
+    if (empty($normalized)) return '';
+    
+    // Split by dash dan underscore, lalu join dengan wildcard
+    $parts = preg_split('/[\-_]+/', $normalized);
+    $parts = array_filter($parts); // Remove empty
+    
+    if (empty($parts)) return '%' . $normalized . '%';
+    
+    return '%' . implode('%', $parts) . '%';
+}
+
+/**
+ * Generate multiple search patterns untuk meningkatkan akurasi
+ */
+function generateSearchPatterns($keyword) {
+    $patterns = [];
+    $normalized = normalizeString($keyword);
+    
+    // Pattern 1: Exact dengan wildcard di awal dan akhir
+    $patterns[] = '%' . mysqli_real_escape_string($GLOBALS['link'], $keyword) . '%';
+    
+    // Pattern 2: Normalized exact
+    $patterns[] = '%' . mysqli_real_escape_string($GLOBALS['link'], $normalized) . '%';
+    
+    // Pattern 3: Fuzzy pattern (split by separator)
+    $fuzzy = generateFuzzyPattern($keyword);
+    if (!in_array($fuzzy, $patterns)) {
+        $patterns[] = mysqli_real_escape_string($GLOBALS['link'], $fuzzy);
+    }
+    
+    // Pattern 4: Each character separated by wildcard (untuk typo berat)
+    if (strlen($normalized) >= 3 && strlen($normalized) <= 15) {
+        $chars = str_split($normalized);
+        $charPattern = '%' . implode('%', $chars) . '%';
+        $patterns[] = mysqli_real_escape_string($GLOBALS['link'], $charPattern);
+    }
+    
+    return array_unique($patterns);
+}
+
+/**
+ * Build WHERE clause untuk fuzzy search pada field tertentu
+ */
+function buildFuzzyWhereClause($field, $keyword, $link) {
+    if (empty(trim($keyword))) return '';
+    
+    $patterns = generateSearchPatterns($keyword);
+    $conditions = [];
+    
+    foreach ($patterns as $pattern) {
+        // Search pada field asli
+        $conditions[] = "($field LIKE '$pattern')";
+        
+        // Search pada normalized field (lowercase, no special chars)
+        $conditions[] = "(LOWER(REPLACE(REPLACE(REPLACE($field, '-', ''), '_', ''), ' ', '')) LIKE '" . 
+                       str_replace(['%', '_'], ['%%', '__'], strtolower(str_replace(['%', '-', '_', ' '], '', $pattern))) . "')";
+    }
+    
+    return '(' . implode(' OR ', $conditions) . ')';
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -68,10 +143,9 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
         .btn-perpage .btn { margin-right:6px; }
         .perpage-active { box-shadow: inset 0 -3px 0 rgba(0,0,0,0.08); }
         
-        /* ===== Table Transparan ===== */
         .table-modern {
             width: 100%;
-            background: transparent; /* transparan */
+            background: transparent;
             box-shadow: none;
         }
         .table-modern thead {
@@ -104,6 +178,11 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
             border-radius: 3px;
             margin: 1px;
         }
+        .fuzzy-hint {
+            font-size: 11px;
+            color: #28a745;
+            margin-top: 4px;
+        }
         
         @media(max-width:767px){
             .search-card { padding:12px; }
@@ -113,11 +192,9 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
 
     <script>
     $(document).ready(function() {
-        // Sanitasi untuk No. Document: ganti spasi dengan strip (-)
-        $('input[name="doc_no"]').on('input', function() {
-            this.value = this.value.replace(/ /g, '-');
-        });
-
+        // REMOVED: Auto-replace space with dash untuk No. Document
+        // Biarkan user mengetik dengan natural, sistem akan handle fuzzy search
+        
         // Sanitasi untuk DRF: hanya izinkan angka
         $('input[name="drf"]').on('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
@@ -152,7 +229,10 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label class="control-label">No Document</label>
-                        <input type="text" id="doc_no_input" name="doc_no" class="form-control" value="<?php echo htmlspecialchars($_GET['doc_no'] ?? ''); ?>" placeholder="e.g DC-001">
+                        <input type="text" id="doc_no_input" name="doc_no" class="form-control" value="<?php echo htmlspecialchars($_GET['doc_no'] ?? ''); ?>" placeholder="e.g DC-001 atau DC 001 atau dc001">
+                        <div class="fuzzy-hint">
+                            <i class="glyphicon glyphicon-info-sign"></i> Sistem akan mencari dokumen meskipun ada typo atau format berbeda
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -271,7 +351,7 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
 // Processing search
 if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) || isset($_GET['sort']) || isset($_GET['drf'])) {
     // Sanitize input
-    $doc_no = isset($_GET['doc_no']) ? mysqli_real_escape_string($link, trim($_GET['doc_no'])) : '';
+    $doc_no_raw = isset($_GET['doc_no']) ? trim($_GET['doc_no']) : '';
     $title  = isset($_GET['title']) ? mysqli_real_escape_string($link, trim($_GET['title'])) : '';
     $empid  = isset($_GET['empid']) ? mysqli_real_escape_string($link, trim($_GET['empid'])) : '';
     $doc_type = isset($_GET['doc_type']) ? mysqli_real_escape_string($link, trim($_GET['doc_type'])) : '';
@@ -286,9 +366,15 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 
     // Build WHERE clause
     $whereParts = [];
-    if ($doc_no !== '') {
-        $whereParts[] = "(no_doc LIKE '%$doc_no%')";
+    
+    // ===== FUZZY SEARCH untuk No Document =====
+    if ($doc_no_raw !== '') {
+        $fuzzyWhere = buildFuzzyWhereClause('no_doc', $doc_no_raw, $link);
+        if (!empty($fuzzyWhere)) {
+            $whereParts[] = $fuzzyWhere;
+        }
     }
+    
     if ($title !== '') {
         $whereParts[] = "(title LIKE '%$title%')";
     }
@@ -326,7 +412,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         mysqli_free_result($countRes);
     }
 
-    // Main query with sorting (ORDER BY no_drf)
+    // Main query with sorting
     $orderDir = ($sort === 'oldest') ? 'ASC' : 'DESC';
     $sql = "SELECT * FROM docu $where ORDER BY no_drf $orderDir";
     if (!$isAll) $sql .= " LIMIT $offset,$perPage";
@@ -348,6 +434,9 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         echo '<div class="container">';
         echo '<div style="margin-bottom: 18px; padding: 0 15px;">';
         echo '<span class="badge-info-custom">Results</span> Menampilkan <strong>'.$startRow.'</strong> - <strong>'.$endRow.'</strong> dari <strong>'.$totalRows.'</strong>';
+        if (!empty($doc_no_raw)) {
+            echo ' <small class="muted-small">(Pencarian fuzzy untuk: "'.htmlspecialchars($doc_no_raw).'")</small>';
+        }
         echo ' &nbsp; <small class="muted-small">Sort: '.htmlspecialchars(($sort==='oldest'?'Oldest first':'Newest first')).'</small>';
         echo '</div>';
         echo '</div>';
@@ -387,7 +476,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                 <?php
                 $i = $isAll ? 1 : $offset + 1;
                 while ($row = mysqli_fetch_assoc($res)) {
-                    // Cek apakah ada bukti sosialisasi
                     $has_sos = !empty($row['sos_file']);
                     
                     echo '<tr>';
@@ -397,7 +485,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     echo '<td>'. htmlspecialchars($row['no_rev']) .'</td>';
                     echo '<td>'. htmlspecialchars($row['no_drf']) .'</td>';
 
-                    // File path logic
                     $tempat = (isset($row['no_drf']) && intval($row['no_drf']) > 12955) ? $row['doc_type'] : 'document';
                     $filePath = htmlspecialchars($tempat . '/' . $row['file']);
 
@@ -408,7 +495,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     echo '<td>'. htmlspecialchars($row['section']) .'</td>';
                     echo '<td>'. htmlspecialchars($row['device']) .'</td>';
                     
-                    // ===== DETAIL COLUMN - UNTUK SEMUA USER (termasuk public) =====
                     echo '<td style="white-space:nowrap;">';
                     echo '<a class="btn btn-xs btn-info" title="Lihat Detail" href="detail.php?drf='.urlencode($row['no_drf']).'&no_doc='.urlencode($row['no_doc']).'">
                             <span class="glyphicon glyphicon-search"></span>
@@ -421,21 +507,14 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                           </a>';
                     echo '</td>';
                     
-                    // ===== ACTION COLUMN - HANYA UNTUK ADMIN =====
                     if ($isAdmin) {
                         echo '<td style="white-space:nowrap;">';
-                        
-                        // Edit button (biru)
                         echo '<a href="edit_doc.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Edit Doc">
                                 <span class="glyphicon glyphicon-pencil"></span>
                               </a>';
-                        
-                        // Delete button (merah) with confirmation
                         echo '<a href="del_doc.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-danger" onClick="return confirm(\'Delete document '.htmlspecialchars($row['no_doc']).'?\')" title="Delete Doc">
                                 <span class="glyphicon glyphicon-remove"></span>
                               </a>';
-                        
-                        // Secure Document button (hijau) - HANYA jika status Approved
                         if (isset($row['status']) && $row['status'] == 'Approved') {
                             echo '<a data-toggle="modal" data-target="#myModal2" 
                                      data-id="'.htmlspecialchars($row['no_drf']).'" 
@@ -446,26 +525,20 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                                     <span class="glyphicon glyphicon-play"></span>
                                   </a>';
                         }
-                        
-                        // Ganti Doc button (orange/warning) - UNTUK SEMUA STATUS
                         echo '<a href="ganti_doc.php?drf='.urlencode($row['no_drf']).'&type='.urlencode($row['doc_type']).'" 
                                 class="btn btn-xs btn-warning" title="Ganti Doc">
                                 <span class="glyphicon glyphicon-refresh"></span> Ganti
                               </a>';
-                        
                         echo '</td>';
                     }
                     
-                    // ===== KOLOM SOSIALISASI - UNTUK ADMIN DAN ORIGINATOR =====
                     if ($isAdmin || $isOriginator) {
                         echo '<td style="white-space:nowrap;">';
                         if ($has_sos) {
-                            // Jika sudah ada bukti sosialisasi - tampilkan tombol lihat (biru)
                             echo '<a href="lihat_sosialisasi.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Sosialisasi">
                                     <span class="glyphicon glyphicon-file"></span> Lihat
                                   </a>';
                         } else {
-                            // Jika belum ada - tampilkan tombol upload (hijau)
                             echo '<button type="button"
                                     class="btn btn-xs btn-success btn-upload-sos"
                                     data-drf="'.htmlspecialchars($row['no_drf']).'"
@@ -487,25 +560,21 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     </div>
 
     <?php
-    // Pagination
     if (!$isAll && $totalRows > 0) {
         $totalPages = ceil($totalRows / $perPage);
         if ($totalPages > 1) {
             echo '<nav><ul class="pagination justify-content-center">';
             
-            // Previous button
             if ($page > 1) {
                 echo '<li><a href="'.build_page_url($page-1).'">Prev</a></li>';
             }
             
-            // Page numbers
             $range = 2;
             for ($p = max(1, $page - $range); $p <= min($totalPages, $page + $range); $p++) {
                 $active = ($p==$page)?' class="active"':'';
                 echo '<li'.$active.'><a href="'.build_page_url($p).'">'.$p.'</a></li>';
             }
             
-            // Next button
             if ($page < $totalPages) {
                 echo '<li><a href="'.build_page_url($page+1).'">Next</a></li>';
             }
@@ -518,10 +587,9 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </div>
 <?php endif; ?>
 
-<?php } // end processing ?>
+<?php } ?>
 
 <?php if ($isAdmin): ?>
-<!-- ===== MODAL SECURE DOCUMENT (HANYA ADMIN) ===== -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -531,8 +599,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
             </div>
             <div class="modal-body">
                 <form name="secure_doc" method="POST" action="process.php" enctype="multipart/form-data">
-                    <input type="hidden" name="drf" id="drf" class="form-control" value=""/>
-                    <input type="hidden" name="lama" id="lama" class="form-control" value=""/>
                     <input type="hidden" name="status" id="status" class="form-control" value=""/>
                     <div class="form-group">
                         <label>Upload New Secured File:</label>
@@ -550,7 +616,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 <?php endif; ?>
 
 <?php if ($isAdmin || $isOriginator): ?>
-<!-- ===== MODAL UPLOAD SOSIALISASI (ADMIN & ORIGINATOR) ===== -->
 <div class="modal fade" id="modalSosialisasi" tabindex="-1" role="dialog" aria-labelledby="modalSosLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -563,7 +628,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     <p>Upload bukti sosialisasi untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
                     <input type="hidden" name="drf" id="modal_upload_drf" value="">
                     <?php
-                    // CSRF token
                     if (empty($_SESSION['csrf_token'])) {
                         if (function_exists('random_bytes')) {
                             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -600,7 +664,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     const sortInput = document.getElementById('sortInput');
     const sortSelect = document.getElementById('sortSelect');
 
-    // Sort dropdown change handler
     if (sortSelect && sortInput) {
         sortSelect.addEventListener('change', function(){
             sortInput.value = this.value;
@@ -608,7 +671,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         });
     }
 
-    // Per page buttons handler
     document.querySelectorAll('.btn-perpage button').forEach(function(b){
         b.addEventListener('click', function(){
             const per = this.getAttribute('data-per');
@@ -624,7 +686,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         });
     });
 
-    // Reset button handler
     if (resetBtn && form) {
         resetBtn.addEventListener('click', function(e){
             e.preventDefault();
@@ -633,10 +694,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     }
 
     <?php if ($isAdmin || $isOriginator): ?>
-    // Modal handlers (hanya untuk logged in users)
     document.addEventListener('click', function(e){
         <?php if ($isAdmin): ?>
-        // Modal Secure Document (hanya Admin)
         if (e.target.closest('.sec-file')) {
             const el = e.target.closest('.sec-file');
             document.querySelector('#myModal2 #drf').value = el.getAttribute('data-id') || '';
@@ -645,22 +704,14 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         }
         <?php endif; ?>
         
-        // Modal Upload Sosialisasi (Admin dan Originator)
         if (e.target.closest('.btn-upload-sos')) {
             e.preventDefault();
-            
-            // Reset form terlebih dahulu
             $('#modalSosialisasi').find('form')[0].reset();
-            
-            // Isi data baru
             const btn = e.target.closest('.btn-upload-sos');
             const drf = btn.getAttribute('data-drf');
             const nodoc = btn.getAttribute('data-nodoc');
-            
             document.getElementById('modal_upload_drf').value = drf;
             document.getElementById('modal_upload_nodoc').textContent = nodoc;
-            
-            // Show modal
             $('#modalSosialisasi').modal('show');
         }
     });
@@ -669,4 +720,4 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </script>
 
 </body>
-</html>
+</html>" 
