@@ -1,0 +1,5949 @@
+=== START SAVE PROCESS ===
+Time: 2025-10-02 01:07:08
+Total selected reviewers: 1
+Document Info - ID: 17274, Type: Form, ISO: 2, No: ini-trial-doc-11
+SMTP config loaded from smtp.php
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Email address added: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+=== Email Summary ===
+Total emails to send: 1
+Database inserts successful: 1
+Recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 2 Oct 2025 01:07:08 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <1f3611a2f8f4ec64912039bab44bf0b9@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_1f3611a2f8f4ec64912039bab44bf0b9"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_1f3611a2f8f4ec64912039bab44bf0b9
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: ini-trial-doc-11 - Title:
+
+SMTP Debug: CLIENT -> SERVER: ini trial1
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_1f3611a2f8f4ec64912039bab44bf0b9
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           This following <span style='color:green'>Form</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                           <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           No. Document : ini-trial-doc-11<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           Document Title : ini trial1<br />
+
+SMTP Debug: CLIENT -> SERVER:                           Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_1f3611a2f8f4ec64912039bab44bf0b9--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 79531300003C7
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-02 01:20:20
+Total selected reviewers: 1
+Document Info - ID: 17275, Type: WI, ISO: 1, No: ini-trial-doc-1
+SMTP config loaded from smtp.php
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Email address added: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+=== Email Summary ===
+Total emails to send: 1
+Database inserts successful: 1
+Recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 2 Oct 2025 01:20:20 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <bab7d0075328d13470a9f55290b2ae1a@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_bab7d0075328d13470a9f55290b2ae1a"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_bab7d0075328d13470a9f55290b2ae1a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: ini-trial-doc-1 - Title:
+
+SMTP Debug: CLIENT -> SERVER: ini trial
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_bab7d0075328d13470a9f55290b2ae1a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           This following <span style='color:green'>WI</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                           <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           No. Document : ini-trial-doc-1<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           Document Title : ini trial<br />
+
+SMTP Debug: CLIENT -> SERVER:                           Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_bab7d0075328d13470a9f55290b2ae1a--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 0D94A300000AA
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 01:15:24
+Total selected reviewers: 2
+Document Info - ID: 17277, Type: Procedure, ISO: 1, No: testing
+SMTP config loaded from smtp.php
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Email address added: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramaullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramaullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Email address added: javieramaullah12@gmail.com
+=== Processing Default Approvers ===
+Default Approver: Kosnurdin (nurdin@ssi.sharp-world.com)
+✓ Default approver inserted
+=== Email Summary ===
+Total emails to send: 3
+Database inserts successful: 2
+Recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [javieramaullah12@gmail.com] => 1
+    [nurdin@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay04.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay04.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramaullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<nurdin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 01:15:24 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Puput Kurniawan <javieramaullah12@gmail.com>, Kosnurdin <nurdin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <0f8668ff56befc82b3d0709cf4f85c5e@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_0f8668ff56befc82b3d0709cf4f85c5e"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0f8668ff56befc82b3d0709cf4f85c5e
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: testing - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0f8668ff56befc82b3d0709cf4f85c5e
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                           <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           No. Document : testing<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                           Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                           Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0f8668ff56befc82b3d0709cf4f85c5e--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as D2540200648A9
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 01:23:48
+Total selected reviewers: 2
+Document Info - ID: 17278, Type: WI, ISO: 1, No: PUSING88
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramaullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramaullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramaullah12@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 2
+Total recipients to email: 2
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: javieramaullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [javieramaullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramaullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 01:23:48 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Puput Kurniawan <javieramaullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <e85a7d5942f91e3891026ca2620b744a@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_e85a7d5942f91e3891026ca2620b744a"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e85a7d5942f91e3891026ca2620b744a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: PUSING88 - Title: PUSING
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e85a7d5942f91e3891026ca2620b744a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>WI</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : PUSING88<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : PUSING<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e85a7d5942f91e3891026ca2620b744a--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 4DC2630001193
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 01:27:40
+Total selected reviewers: 2
+Document Info - ID: 17280, Type: Form, ISO: 1, No: testing
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 2
+Total recipients to email: 2
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 01:27:40 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <ff9b137e75edf04d091acee337d83b81@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_ff9b137e75edf04d091acee337d83b81"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_ff9b137e75edf04d091acee337d83b81
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: testing - Title: sd
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_ff9b137e75edf04d091acee337d83b81
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Form</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : testing<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : sd<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_ff9b137e75edf04d091acee337d83b81--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 1027630001195
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 01:34:55
+Total selected reviewers: 3
+Document Info - ID: 17281, Type: WI, ISO: 1, No: t
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA Section
+✓ Database insert successful for Kosnurdin
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 2: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 3
+Total recipients to email: 3
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 3
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay06.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay06.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 01:34:55 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <c7d57a02451bbf7c66bede1a3102905a@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_c7d57a02451bbf7c66bede1a3102905a"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_c7d57a02451bbf7c66bede1a3102905a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: t - Title: r
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_c7d57a02451bbf7c66bede1a3102905a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>WI</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : t<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : r<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_c7d57a02451bbf7c66bede1a3102905a--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as B779820064881
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 01:50:17
+Total selected reviewers: 3
+Document Info - ID: 17282, Type: WI, ISO: 1, No: gugybot
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+Processing item 2: Array
+(
+    [0] => gzbs118202
+    [1] => Yukiro Kita
+    [2] => kita@ssi.sharp-world.com
+    [3] => QA Section
+)
+
+Reviewer: Yukiro Kita (kita@ssi.sharp-world.com) - Section: QA Section
+✓ Database insert successful for Yukiro Kita
+✓ Added to recipients list: kita@ssi.sharp-world.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 3
+Total recipients to email: 3
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+✓ Email address added: kita@ssi.sharp-world.com (Yukiro Kita)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 3
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+    [kita@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<kita@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 01:50:17 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>, Yukiro Kita <kita@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <1eca449c3b1918f253806ef6d5067a76@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_1eca449c3b1918f253806ef6d5067a76"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_1eca449c3b1918f253806ef6d5067a76
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: gugybot - Title: gugy
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_1eca449c3b1918f253806ef6d5067a76
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>WI</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : gugybot<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : gugy<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_1eca449c3b1918f253806ef6d5067a76--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as ABE7E30001151
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 01:52:46
+Total selected reviewers: 3
+Document Info - ID: 17283, Type: Form, ISO: 1, No: testing
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA Section
+✓ Database insert successful for Kosnurdin
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 2: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 3
+Total recipients to email: 3
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 3
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 01:52:46 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <d128b91b032be7d610791cf34cc41192@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_d128b91b032be7d610791cf34cc41192"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_d128b91b032be7d610791cf34cc41192
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: testing - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_d128b91b032be7d610791cf34cc41192
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Form</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : testing<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_d128b91b032be7d610791cf34cc41192--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as A7C0430001151
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 02:00:38
+Total selected reviewers: 3
+Document Info - ID: 17284, Type: WI, ISO: 1, No: testing
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA Section
+✓ Database insert successful for Kosnurdin
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 2: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 3
+Total recipients to email: 3
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 3
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 02:00:38 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <969250ef8a2af6bb34667e43c9d7817f@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_969250ef8a2af6bb34667e43c9d7817f"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_969250ef8a2af6bb34667e43c9d7817f
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: testing - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_969250ef8a2af6bb34667e43c9d7817f
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>WI</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : testing<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_969250ef8a2af6bb34667e43c9d7817f--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 55A653000116D
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 02:34:51
+Total selected reviewers: 3
+Document Info - ID: 17285, Type: Form, ISO: 1, No: testingdoc
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Accounting Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Accounting Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA Section
+✓ Database insert successful for Kosnurdin
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 2: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 3
+Total recipients to email: 3
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 3
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 02:34:51 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <e6ba83e94ef86d0fb7bbd4f7d1287eba@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_e6ba83e94ef86d0fb7bbd4f7d1287eba"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e6ba83e94ef86d0fb7bbd4f7d1287eba
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: testingdoc - Title:
+
+SMTP Debug: CLIENT -> SERVER: testdoc
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e6ba83e94ef86d0fb7bbd4f7d1287eba
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Form</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : testingdoc<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testdoc<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e6ba83e94ef86d0fb7bbd4f7d1287eba--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as F1A4B30001151
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 03:04:28
+Total selected reviewers: 1
+Document Info - ID: 17286, Type: Form, ISO: 1, No: ini-trial-doc-11
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 1
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 03:04:28 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <e6ae30975484662fb9567747a36eb5df@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_e6ae30975484662fb9567747a36eb5df"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e6ae30975484662fb9567747a36eb5df
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: ini-trial-doc-11 - Title:
+
+SMTP Debug: CLIENT -> SERVER: ini test
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e6ae30975484662fb9567747a36eb5df
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Form</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : ini-trial-doc-11<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : ini test<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e6ae30975484662fb9567747a36eb5df--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 3631C30000816
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 03:15:12
+Total selected reviewers: 2
+Document Info - ID: 17287, Type: Procedure, ISO: 1, No: revisi-mydoc
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA Section
+✓ Database insert successful for Kosnurdin
+✓ Added to recipients list: zoroop109@gmail.com
+=== Processing Default Approvers ===
+Default Approver: Kosnurdin (zoroop109@gmail.com)
+✓ Default approver inserted
+✓ Added default approver to recipients list: zoroop109@gmail.com
+=== Email Preparation ===
+Database inserts successful: 2
+Total recipients to email: 3
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 3
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay02.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay02.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 03:15:12 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <8f00bb352a42587de51fae81a4fa76ec@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_8f00bb352a42587de51fae81a4fa76ec"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_8f00bb352a42587de51fae81a4fa76ec
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: revisi-mydoc - Title:
+
+SMTP Debug: CLIENT -> SERVER: revisi-mydoc
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_8f00bb352a42587de51fae81a4fa76ec
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : revisi-mydoc<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : revisi-mydoc<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_8f00bb352a42587de51fae81a4fa76ec--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 5A158200645E0
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 03:38:49
+Total selected reviewers: 3
+Document Info - ID: 17288, Type: Procedure, ISO: 1, No: testing-mydoc1
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA Section
+✓ Database insert successful for Kosnurdin
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 2: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Processing Default Approvers ===
+Default Approver: Kosnurdin (zoroop109@gmail.com)
+✓ Default approver inserted
+✓ Added default approver to recipients list: zoroop109@gmail.com
+=== Email Preparation ===
+Database inserts successful: 3
+Total recipients to email: 4
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 4
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay02.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay02.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 03:38:49 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <16de5d3576fdf8995b770d638ae90b4d@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_16de5d3576fdf8995b770d638ae90b4d"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_16de5d3576fdf8995b770d638ae90b4d
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: testing-mydoc1 - Title:
+
+SMTP Debug: CLIENT -> SERVER: testing-mydoc11
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_16de5d3576fdf8995b770d638ae90b4d
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : testing-mydoc1<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing-mydoc11<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_16de5d3576fdf8995b770d638ae90b4d--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 2335D200645E0
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 4
+
+=== START SAVE PROCESS ===
+Time: 2025-10-03 07:02:32
+Total selected reviewers: 3
+Document Info - ID: 17289, Type: Form, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA Section
+✓ Database insert successful for Kosnurdin
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 2: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 3
+Total recipients to email: 3
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 3
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay04.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay04.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 3 Oct 2025 07:02:32 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <19764dc0e35ff5f84862eac820c6a65a@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_19764dc0e35ff5f84862eac820c6a65a"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_19764dc0e35ff5f84862eac820c6a65a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: coba email
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_19764dc0e35ff5f84862eac820c6a65a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Form</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : coba email<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_19764dc0e35ff5f84862eac820c6a65a--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 4E05720064896
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS ===
+Time: 2025-10-08 02:16:25
+Total selected reviewers: 1
+Document Info - ID: 17290, Type: Procedure, ISO: 1, No: tanggal8
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+Default Approver: Kosnurdin (zoroop109@gmail.com)
+✓ Default approver inserted
+✓ Added default approver to recipients list: zoroop109@gmail.com
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 2
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay05.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay05.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Wed, 8 Oct 2025 02:16:25 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <414ef48ee7fe2b1615a3c8f7e910fa2e@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_414ef48ee7fe2b1615a3c8f7e910fa2e"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_414ef48ee7fe2b1615a3c8f7e910fa2e
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: tanggal8 - Title: coba
+
+SMTP Debug: CLIENT -> SERVER: snapshoot
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_414ef48ee7fe2b1615a3c8f7e910fa2e
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : tanggal8<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : coba snapshoot<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_414ef48ee7fe2b1615a3c8f7e910fa2e--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 7EDBB300000AD
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS ===
+Time: 2025-10-10 03:46:48
+Total selected reviewers: 1
+Document Info - ID: 17291, Type: Form, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 1
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 10 Oct 2025 03:46:48 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <b45bf00e4708b5241508e1c002ee2bff@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_b45bf00e4708b5241508e1c002ee2bff"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_b45bf00e4708b5241508e1c002ee2bff
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_b45bf00e4708b5241508e1c002ee2bff
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Form</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_b45bf00e4708b5241508e1c002ee2bff--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as C1FC7300000BC
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-10 03:54:57
+Total selected reviewers: 1
+Document Info - ID: 17292, Type: Procedure, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+Default Approver: Kosnurdin (zoroop109@gmail.com)
+✓ Default approver inserted
+✓ Added default approver to recipients list: zoroop109@gmail.com
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 2
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 10 Oct 2025 03:54:57 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <793d73643b99e19a658b451ceaf71828@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_793d73643b99e19a658b451ceaf71828"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_793d73643b99e19a658b451ceaf71828
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_793d73643b99e19a658b451ceaf71828
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_793d73643b99e19a658b451ceaf71828--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 92DB4300000BC
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS ===
+Time: 2025-10-10 07:28:00
+Total selected reviewers: 1
+Document Info - ID: 17293, Type: PE, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 1
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay04.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay04.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 10 Oct 2025 07:28:00 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <827e8c963cb147baa768bb7bbd32ca24@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_827e8c963cb147baa768bb7bbd32ca24"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_827e8c963cb147baa768bb7bbd32ca24
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_827e8c963cb147baa768bb7bbd32ca24
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>PE</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_827e8c963cb147baa768bb7bbd32ca24--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as B0C592006488E
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-13 00:43:31
+Total selected reviewers: 1
+Document Info - ID: 17294, Type: PE, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002162
+    [1] => Rahmat Priyo Utomo
+    [2] => rahmat@ssi.sharp-world.com
+    [3] => Accounting Section
+)
+
+Reviewer: Rahmat Priyo Utomo (rahmat@ssi.sharp-world.com) - Section: Accounting Section
+✓ Database insert successful for Rahmat Priyo Utomo
+✓ Added to recipients list: rahmat@ssi.sharp-world.com
+=== Processing Default Approvers ===
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 1
+SMTP config loaded from smtp.php
+✓ Email address added: rahmat@ssi.sharp-world.com (Rahmat Priyo Utomo)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [rahmat@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay05.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay05.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<rahmat@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Mon, 13 Oct 2025 00:43:31 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Rahmat Priyo Utomo <rahmat@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <6d1ba2f7829ed0db1da40e486ab39f9a@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_6d1ba2f7829ed0db1da40e486ab39f9a"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_6d1ba2f7829ed0db1da40e486ab39f9a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_6d1ba2f7829ed0db1da40e486ab39f9a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>PE</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_6d1ba2f7829ed0db1da40e486ab39f9a--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 997F930000087
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-13 02:09:55
+Total selected reviewers: 1
+Document Info - ID: 17295, Type: Procedure, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+Default Approver: Kosnurdin (zoroop109@gmail.com)
+✓ Default approver inserted
+✓ Added default approver to recipients list: zoroop109@gmail.com
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 2
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay05.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay05.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Mon, 13 Oct 2025 02:09:55 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <28c6482a4ea8528cf61038ddc8a5dc25@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_28c6482a4ea8528cf61038ddc8a5dc25"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_28c6482a4ea8528cf61038ddc8a5dc25
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_28c6482a4ea8528cf61038ddc8a5dc25
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_28c6482a4ea8528cf61038ddc8a5dc25--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as AF92E3000008B
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS ===
+Time: 2025-10-13 03:23:21
+Total selected reviewers: 1
+Document Info - ID: 17296, Type: Procedure, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+Default Approver: Kosnurdin (zoroop109@gmail.com)
+✓ Default approver inserted
+✓ Added default approver to recipients list: zoroop109@gmail.com
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 2
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay05.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay05.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Mon, 13 Oct 2025 03:23:21 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <9f9b119e8dcad6bafd4c1e582e09fada@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_9f9b119e8dcad6bafd4c1e582e09fada"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_9f9b119e8dcad6bafd4c1e582e09fada
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_9f9b119e8dcad6bafd4c1e582e09fada
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_9f9b119e8dcad6bafd4c1e582e09fada--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 0813C3000008D
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS ===
+Time: 2025-10-13 05:54:38
+Total selected reviewers: 1
+Document Info - ID: 17268, Type: Procedure, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Processing Default Approvers ===
+Default Approver: Kosnurdin (zoroop109@gmail.com)
+✓ Default approver inserted
+✓ Added default approver to recipients list: zoroop109@gmail.com
+=== Email Preparation ===
+Database inserts successful: 1
+Total recipients to email: 2
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Mon, 13 Oct 2025 05:54:38 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <0cc02a806751e3153b4cee0214f64de9@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_0cc02a806751e3153b4cee0214f64de9"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0cc02a806751e3153b4cee0214f64de9
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0cc02a806751e3153b4cee0214f64de9
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0cc02a806751e3153b4cee0214f64de9--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 2D005300003E8
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS ===
+Time: 2025-10-15 05:55:52
+Total selected reviewers: 1
+Document Info - ID: 17267, Type: Procedure, ISO: 1, No: ini-testing
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Wed, 15 Oct 2025 05:55:52 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <232b41103016e250eac596e07eb5dd97@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_232b41103016e250eac596e07eb5dd97"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_232b41103016e250eac596e07eb5dd97
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: ini-testing - Title:
+
+SMTP Debug: CLIENT -> SERVER: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_232b41103016e250eac596e07eb5dd97
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : ini-testing<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_232b41103016e250eac596e07eb5dd97--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 613FC300010E8
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-15 05:57:53
+Total selected reviewers: 2
+Document Info - ID: 17268, Type: Procedure, ISO: 1, No: test1
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA Section
+✓ Database insert successful for Puput Kurniawan
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 2
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 2
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay01.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay01.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Wed, 15 Oct 2025 05:57:53 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <c4d6a0c928f97d8c80a20a579d32af5d@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_c4d6a0c928f97d8c80a20a579d32af5d"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_c4d6a0c928f97d8c80a20a579d32af5d
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test1 - Title: Doc. Title
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_c4d6a0c928f97d8c80a20a579d32af5d
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test1<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : Doc. Title<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_c4d6a0c928f97d8c80a20a579d32af5d--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as D8725300010E8
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS ===
+Time: 2025-10-15 06:38:17
+Total selected reviewers: 1
+Document Info - ID: 17269, Type: pool, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Wed, 15 Oct 2025 06:38:17 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <faedb22d4a1397917beb820b87c2692b@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_faedb22d4a1397917beb820b87c2692b"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_faedb22d4a1397917beb820b87c2692b
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_faedb22d4a1397917beb820b87c2692b
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>pool</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_faedb22d4a1397917beb820b87c2692b--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as C7CB2300000A8
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-16 02:36:06
+Total selected reviewers: 1
+Document Info - ID: 17270, Type: test, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay05.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay05.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 16 Oct 2025 02:36:06 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <570da05bf1deaa7dcb7808410d68aed9@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_570da05bf1deaa7dcb7808410d68aed9"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_570da05bf1deaa7dcb7808410d68aed9
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_570da05bf1deaa7dcb7808410d68aed9
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_570da05bf1deaa7dcb7808410d68aed9--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as AF72830000086
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-16 03:09:50
+Total selected reviewers: 1
+Document Info - ID: 17271, Type: test, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay05.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay05.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 16 Oct 2025 03:09:50 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <e75679df611d2ad397935c7a29c03077@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_e75679df611d2ad397935c7a29c03077"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e75679df611d2ad397935c7a29c03077
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e75679df611d2ad397935c7a29c03077
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_e75679df611d2ad397935c7a29c03077--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as C6A6230000086
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS ===
+Time: 2025-10-16 03:11:10
+Total selected reviewers: 1
+Document Info - ID: 17272, Type: Procedure, ISO: 1, No: test
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA Section
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA Section
+✓ Database insert successful for Javier
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay05.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay05.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 16 Oct 2025 03:11:10 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <0ba69b8ee32deb7ab25419f7f3975556@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_0ba69b8ee32deb7ab25419f7f3975556"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0ba69b8ee32deb7ab25419f7f3975556
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0ba69b8ee32deb7ab25419f7f3975556
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_0ba69b8ee32deb7ab25419f7f3975556--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 5057A30000086
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-16 04:02:46
+Total selected reviewers: 1
+Document Info - ID: 17274, Type: test, ISO: 1, No: test
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA
+✓ Database insert successful for Javier (section: QA)
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay02.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay02.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 16 Oct 2025 04:02:46 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <b3c22a071033e7fb9a9e1ee0d84e8eb1@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_b3c22a071033e7fb9a9e1ee0d84e8eb1"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_b3c22a071033e7fb9a9e1ee0d84e8eb1
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_b3c22a071033e7fb9a9e1ee0d84e8eb1
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_b3c22a071033e7fb9a9e1ee0d84e8eb1--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 8EAD3200645D7
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-16 04:14:16
+Total selected reviewers: 1
+Document Info - ID: 17275, Type: test, ISO: 1, No: test
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA
+✓ Database insert successful for Javier (section: QA)
+✓ Added to recipients list: javieramanullah2@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 16 Oct 2025 04:14:16 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <bbc4fa97d9cb77e1aa150c97713ab639@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_bbc4fa97d9cb77e1aa150c97713ab639"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_bbc4fa97d9cb77e1aa150c97713ab639
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_bbc4fa97d9cb77e1aa150c97713ab639
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_bbc4fa97d9cb77e1aa150c97713ab639--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as E12D5300000B1
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 1
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-16 05:54:58
+Total selected reviewers: 2
+Document Info - ID: 17276, Type: test, ISO: 1, No: ini-testing
+Section (normalized): MIS
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => QA
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: QA
+✓ Database insert successful for Javier (section: QA)
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA
+✓ Database insert successful for Kosnurdin (section: QA)
+✓ Added to recipients list: zoroop109@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 2
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 2
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 16 Oct 2025 05:54:58 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <daa40d52923147b3ec256b10445b1a8a@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_daa40d52923147b3ec256b10445b1a8a"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_daa40d52923147b3ec256b10445b1a8a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: ini-testing - Title:
+
+SMTP Debug: CLIENT -> SERVER: TESTING_MYDOC
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_daa40d52923147b3ec256b10445b1a8a
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : ini-testing<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : TESTING_MYDOC<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_daa40d52923147b3ec256b10445b1a8a--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 402F8300000B1
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-17 06:26:36
+Total selected reviewers: 1
+Document Info - ID: 17281, Type: test, ISO: 1, No: REI-JSJ-09-04-2025
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002158
+    [1] => Primandi Baskoro
+    [2] => primandi@ssi.sharp-world.com
+    [3] => Research and Development
+)
+
+Reviewer: Primandi Baskoro (primandi@ssi.sharp-world.com) - Section: Research and Development
+✓ Database insert successful for Primandi Baskoro (section: Research and Development)
+✓ Added to recipients list: primandi@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: primandi@ssi.sharp-world.com (Primandi Baskoro)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [primandi@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-17 08:38:08
+Total selected reviewers: 1
+Document Info - ID: 17282, Type: test, ISO: 1, No: REI-JSJ-09-04-2025
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 003115
+    [1] => Henis
+    [2] => rnd@ssi.sharp-world.com
+    [3] => Research and Development
+)
+
+Reviewer: Henis (rnd@ssi.sharp-world.com) - Section: Research and Development
+✓ Database insert successful for Henis (section: Research and Development)
+✓ Added to recipients list: rnd@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: rnd@ssi.sharp-world.com (Henis)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [rnd@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-20 00:32:20
+Total selected reviewers: 1
+Document Info - ID: 17283, Type: HSS, ISO: 1, No: REI-JSJ-09-04-2025
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002158
+    [1] => Primandi Baskoro
+    [2] => primandi@ssi.sharp-world.com
+    [3] => Research and Development
+)
+
+Reviewer: Primandi Baskoro (primandi@ssi.sharp-world.com) - Section: Research and Development
+✓ Database insert successful for Primandi Baskoro (section: Research and Development)
+✓ Added to recipients list: primandi@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: primandi@ssi.sharp-world.com (Primandi Baskoro)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [primandi@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-20 01:58:16
+Total selected reviewers: 1
+Document Info - ID: 17284, Type: test, ISO: 1, No: 23w1
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002158
+    [1] => Primandi Baskoro
+    [2] => primandi@ssi.sharp-world.com
+    [3] => Research and Development
+)
+
+Reviewer: Primandi Baskoro (primandi@ssi.sharp-world.com) - Section: Research and Development
+✓ Database insert successful for Primandi Baskoro (section: Research and Development)
+✓ Added to recipients list: primandi@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: primandi@ssi.sharp-world.com (Primandi Baskoro)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [primandi@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-20 02:12:39
+Total selected reviewers: 1
+Document Info - ID: 17285, Type: test, ISO: 1, No: REI-JSJ-09-04-2025
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002162
+    [1] => Rahmat Priyo Utomo
+    [2] => rahmat@ssi.sharp-world.com
+    [3] => Accounting
+)
+
+Reviewer: Rahmat Priyo Utomo (rahmat@ssi.sharp-world.com) - Section: Accounting
+✓ Database insert successful for Rahmat Priyo Utomo (section: Accounting)
+✓ Added to recipients list: rahmat@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: rahmat@ssi.sharp-world.com (Rahmat Priyo Utomo)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [rahmat@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-20 02:37:03
+Total selected reviewers: 1
+Document Info - ID: 17286, Type: WI, ISO: 1, No: REI-JSJ-09-04-2025
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002162
+    [1] => Rahmat Priyo Utomo
+    [2] => rahmat@ssi.sharp-world.com
+    [3] => Accounting
+)
+
+Reviewer: Rahmat Priyo Utomo (rahmat@ssi.sharp-world.com) - Section: Accounting
+✓ Database insert successful for Rahmat Priyo Utomo (section: Accounting)
+✓ Added to recipients list: rahmat@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: rahmat@ssi.sharp-world.com (Rahmat Priyo Utomo)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [rahmat@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-20 02:54:52
+Total selected reviewers: 1
+Document Info - ID: 17287, Type: SATO, ISO: 1, No: REI-JSJ-09-04-2025
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002162
+    [1] => Rahmat Priyo Utomo
+    [2] => rahmat@ssi.sharp-world.com
+    [3] => Accounting
+)
+
+Reviewer: Rahmat Priyo Utomo (rahmat@ssi.sharp-world.com) - Section: Accounting
+✓ Database insert successful for Rahmat Priyo Utomo (section: Accounting)
+✓ Added to recipients list: rahmat@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: rahmat@ssi.sharp-world.com (Rahmat Priyo Utomo)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [rahmat@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-20 03:35:45
+Total selected reviewers: 1
+Document Info - ID: 17288, Type: Procedure, ISO: 1, No: REI-JSJ-09-04-2025
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002162
+    [1] => Rahmat Priyo Utomo
+    [2] => rahmat@ssi.sharp-world.com
+    [3] => Accounting
+)
+
+Reviewer: Rahmat Priyo Utomo (rahmat@ssi.sharp-world.com) - Section: Accounting
+✓ Database insert successful for Rahmat Priyo Utomo (section: Accounting)
+✓ Added to recipients list: rahmat@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: rahmat@ssi.sharp-world.com (Rahmat Priyo Utomo)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [rahmat@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-21 07:26:07
+Total selected reviewers: 1
+Document Info - ID: 17290, Type: PE, ISO: 1, No: ngantuk
+Section (normalized): MIS
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => puput@ssi.sharp-world.com
+    [3] => QA
+)
+
+Reviewer: Puput Kurniawan (puput@ssi.sharp-world.com) - Section: QA
+✓ Database insert successful for Puput Kurniawan (section: QA)
+✓ Added to recipients list: puput@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: puput@ssi.sharp-world.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [puput@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-21 08:35:43
+Total selected reviewers: 1
+Document Info - ID: 17291, Type: PE, ISO: 1, No: REI-JSJ-09-04-2025
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002158
+    [1] => Primandi Baskoro
+    [2] => primandi@ssi.sharp-world.com
+    [3] => Research and Development
+)
+
+Reviewer: Primandi Baskoro (primandi@ssi.sharp-world.com) - Section: Research and Development
+✓ Database insert successful for Primandi Baskoro (section: Research and Development)
+✓ Added to recipients list: primandi@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: primandi@ssi.sharp-world.com (Primandi Baskoro)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [primandi@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-22 00:58:13
+Total selected reviewers: 1
+Document Info - ID: 17292, Type: PE, ISO: 1, No: 223
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002158
+    [1] => Primandi Baskoro
+    [2] => primandi@ssi.sharp-world.com
+    [3] => Research and Development
+)
+
+Reviewer: Primandi Baskoro (primandi@ssi.sharp-world.com) - Section: Research and Development
+✓ Database insert successful for Primandi Baskoro (section: Research and Development)
+✓ Added to recipients list: primandi@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: primandi@ssi.sharp-world.com (Primandi Baskoro)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [primandi@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-22 01:16:10
+Total selected reviewers: 1
+Document Info - ID: 17293, Type: PE, ISO: 1, No: 223
+Section (normalized): BMG
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 002158
+    [1] => Primandi Baskoro
+    [2] => primandi@ssi.sharp-world.com
+    [3] => Research and Development
+)
+
+Reviewer: Primandi Baskoro (primandi@ssi.sharp-world.com) - Section: Research and Development
+✓ Database insert successful for Primandi Baskoro (section: Research and Development)
+✓ Added to recipients list: primandi@ssi.sharp-world.com
+=== Database Insert Summary ===
+Successfully inserted: 1
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 1
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: primandi@ssi.sharp-world.com (Primandi Baskoro)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 1
+PHPMailer recipients list: Array
+(
+    [primandi@ssi.sharp-world.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SMTP ERROR: Failed to connect to server: php_network_getaddresses: getaddrinfo for mailrelay.jp.sharp failed: No such host is known.  (0)
+SMTP Debug: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+✗✗✗ EMAIL SEND FAILED ✗✗✗
+Mailer Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-23 02:02:14
+Total selected reviewers: 2
+Document Info - ID: 17277, Type: Procedure, ISO: 1, No: Sudahi-Perih-Ini
+Section (normalized): MIS
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Management System Information
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Management System Information
+✓ Database insert successful for Javier (section: Management System Information)
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA
+✓ Database insert successful for Puput Kurniawan (section: QA)
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 2
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 2
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay05.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay05.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 23 Oct 2025 02:02:14 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <3767d33843e8ea6af59529c2b3cadc70@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_3767d33843e8ea6af59529c2b3cadc70"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_3767d33843e8ea6af59529c2b3cadc70
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: Sudahi-Perih-Ini - Title:
+
+SMTP Debug: CLIENT -> SERVER: Perih Ini
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_3767d33843e8ea6af59529c2b3cadc70
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>Procedure</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : Sudahi-Perih-Ini<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : Perih Ini<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_3767d33843e8ea6af59529c2b3cadc70--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 332DA30000090
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-23 06:53:42
+Total selected reviewers: 2
+Document Info - ID: 17278, Type: test, ISO: 1, No: test
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA
+✓ Database insert successful for Kosnurdin (section: QA)
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA
+✓ Database insert successful for Puput Kurniawan (section: QA)
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 2
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 2
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay03.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay03.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 23 Oct 2025 06:53:42 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <d6f43f2748cf726441643916a4ee8f34@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_d6f43f2748cf726441643916a4ee8f34"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_d6f43f2748cf726441643916a4ee8f34
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test - Title: test
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_d6f43f2748cf726441643916a4ee8f34
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : test<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_d6f43f2748cf726441643916a4ee8f34--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 6D169300000BD
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-23 07:06:47
+Total selected reviewers: 3
+Document Info - ID: 17279, Type: test, ISO: 1, No: test-type-document
+Section (normalized): MIS
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Management System Information
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Management System Information
+✓ Database insert successful for Javier (section: Management System Information)
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA
+✓ Database insert successful for Kosnurdin (section: QA)
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 2: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA
+✓ Database insert successful for Puput Kurniawan (section: QA)
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 3
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 3
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 3
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay04.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay04.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Thu, 23 Oct 2025 07:06:47 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <abdefe6b14eadb8d586a865280f8fa08@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_abdefe6b14eadb8d586a865280f8fa08"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_abdefe6b14eadb8d586a865280f8fa08
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: test-type-document -
+
+SMTP Debug: CLIENT -> SERVER: Title: test-type-document
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_abdefe6b14eadb8d586a865280f8fa08
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : test-type-document<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : test-type-document<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_abdefe6b14eadb8d586a865280f8fa08--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 23A1720064893
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 3
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-24 06:22:58
+Total selected reviewers: 2
+Document Info - ID: 17280, Type: test, ISO: 1, No: testing
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA
+✓ Database insert successful for Kosnurdin (section: QA)
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA
+✓ Database insert successful for Puput Kurniawan (section: QA)
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 2
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 2
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay06.jp.sharp ESMTP Postfix (Ubuntu)
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay06.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 24 Oct 2025 06:22:58 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <2e998f911324409449bfe8e7291c760c@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_2e998f911324409449bfe8e7291c760c"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_2e998f911324409449bfe8e7291c760c
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: testing - Title: testing
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_2e998f911324409449bfe8e7291c760c
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : testing<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testing<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_2e998f911324409449bfe8e7291c760c--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 867BB20064884
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-24 06:50:10
+Total selected reviewers: 2
+Document Info - ID: 17281, Type: test, ISO: 1, No: testsffs
+Section (normalized): Accounting
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 000043
+    [1] => Kosnurdin
+    [2] => zoroop109@gmail.com
+    [3] => QA
+)
+
+Reviewer: Kosnurdin (zoroop109@gmail.com) - Section: QA
+✓ Database insert successful for Kosnurdin (section: QA)
+✓ Added to recipients list: zoroop109@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA
+✓ Database insert successful for Puput Kurniawan (section: QA)
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 2
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 2
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: zoroop109@gmail.com (Kosnurdin)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [zoroop109@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay02.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay02.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<zoroop109@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 24 Oct 2025 06:50:10 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Kosnurdin <zoroop109@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <ce59ccb209a65bc6118a47de4cec9b43@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_ce59ccb209a65bc6118a47de4cec9b43"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_ce59ccb209a65bc6118a47de4cec9b43
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: testsffs - Title:
+
+SMTP Debug: CLIENT -> SERVER: testingte
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_ce59ccb209a65bc6118a47de4cec9b43
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : testsffs<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : testingte<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_ce59ccb209a65bc6118a47de4cec9b43--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as 708AC200645FF
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+
+=== START SAVE PROCESS (SET APPROVER) ===
+Time: 2025-10-24 07:27:24
+Total selected reviewers: 2
+Document Info - ID: 17282, Type: test, ISO: 1, No: mineral
+Section (normalized): MIS
+=== Processing Selected Reviewers ===
+Processing item 0: Array
+(
+    [0] => 160205
+    [1] => Javier
+    [2] => javieramanullah2@gmail.com
+    [3] => Management System Information
+)
+
+Reviewer: Javier (javieramanullah2@gmail.com) - Section: Management System Information
+✓ Database insert successful for Javier (section: Management System Information)
+✓ Added to recipients list: javieramanullah2@gmail.com
+Processing item 1: Array
+(
+    [0] => 002047
+    [1] => Puput Kurniawan
+    [2] => javieramanullah12@gmail.com
+    [3] => QA
+)
+
+Reviewer: Puput Kurniawan (javieramanullah12@gmail.com) - Section: QA
+✓ Database insert successful for Puput Kurniawan (section: QA)
+✓ Added to recipients list: javieramanullah12@gmail.com
+=== Database Insert Summary ===
+Successfully inserted: 2
+Failed to insert: 0
+Duplicates skipped: 0
+Total recipients for email: 2
+=== Email Preparation ===
+SMTP config loaded from smtp.php
+✓ Email address added: javieramanullah2@gmail.com (Javier)
+✓ Email address added: javieramanullah12@gmail.com (Puput Kurniawan)
+=== Email Recipients Summary ===
+Total email addresses added to mail: 2
+PHPMailer recipients list: Array
+(
+    [javieramanullah2@gmail.com] => 1
+    [javieramanullah12@gmail.com] => 1
+)
+
+=== Attempting to Send Email ===
+SMTP Debug: SERVER -> CLIENT: 220 mailrelay02.jp.sharp ESMTP Postfix
+
+SMTP Debug: CLIENT -> SERVER: EHLO ssi-missvr-22
+
+SMTP Debug: SERVER -> CLIENT: 250-mailrelay02.jp.sharp
+250-PIPELINING
+250-SIZE 102400000
+250-VRFY
+250-ETRN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+
+SMTP Debug: CLIENT -> SERVER: MAIL FROM:<dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.0 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah2@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: RCPT TO:<javieramanullah12@gmail.com>
+
+SMTP Debug: SERVER -> CLIENT: 250 2.1.5 Ok
+
+SMTP Debug: CLIENT -> SERVER: DATA
+
+SMTP Debug: SERVER -> CLIENT: 354 End data with <CR><LF>.<CR><LF>
+
+SMTP Debug: CLIENT -> SERVER: Date: Fri, 24 Oct 2025 07:27:24 +0000
+
+SMTP Debug: CLIENT -> SERVER: To: Javier <javieramanullah2@gmail.com>, Puput Kurniawan <javieramanullah12@gmail.com>
+
+SMTP Debug: CLIENT -> SERVER: From: Admin Document Online System <dc_admin@ssi.sharp-world.com>
+
+SMTP Debug: CLIENT -> SERVER: Subject: Document to Review
+
+SMTP Debug: CLIENT -> SERVER: Message-ID: <7563063a49c6df62df01b28ad403d8b5@ssi-missvr-22>
+
+SMTP Debug: CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.23 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: CLIENT -> SERVER: 	boundary="b1_7563063a49c6df62df01b28ad403d8b5"
+
+SMTP Debug: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_7563063a49c6df62df01b28ad403d8b5
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Document to Review - No: mineral - Title: mineral
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_7563063a49c6df62df01b28ad403d8b5
+
+SMTP Debug: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: Attention Mr./Mrs. : Reviewer <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               This following <span style='color:green'>test</span> Document need to be 
+
+SMTP Debug: CLIENT -> SERVER:                               <span style='color:blue'>reviewed</span> <br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               No. Document : mineral<br /> 
+
+SMTP Debug: CLIENT -> SERVER:                               Document Title : mineral<br />
+
+SMTP Debug: CLIENT -> SERVER:                               Please Login into <a href='http://192.168.132.34/newdocument'>Document Online System</a>, Thank You
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: --b1_7563063a49c6df62df01b28ad403d8b5--
+
+SMTP Debug: CLIENT -> SERVER: 
+
+SMTP Debug: CLIENT -> SERVER: .
+
+SMTP Debug: SERVER -> CLIENT: 250 2.0.0 Ok: queued as E8398200640BD
+
+SMTP Debug: CLIENT -> SERVER: QUIT
+
+SMTP Debug: SERVER -> CLIENT: 221 2.0.0 Bye
+
+✓✓✓ EMAIL SENT SUCCESSFULLY ✓✓✓
+Total recipients: 2
+

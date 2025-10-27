@@ -1,0 +1,104 @@
+[2025-09-30 02:22:45] Mulai login_proc.php
+[2025-09-30 02:22:45] Mencoba include 'koneksi.php'
+[2025-09-30 02:24:16] Mulai login_proc.php
+[2025-09-30 02:24:16] Mencoba include 'koneksi.php'
+[2025-09-30 02:24:25] Mulai login_proc.php
+[2025-09-30 02:24:25] Mencoba include 'koneksi.php'
+[2025-09-30 02:24:26] Mulai login_proc.php
+[2025-09-30 02:24:26] Mencoba include 'koneksi.php'
+[2025-09-30 02:24:29] Mulai login_proc.php
+[2025-09-30 02:24:29] Mencoba include 'koneksi.php'
+[2025-09-30 02:24:33] Mulai login_proc.php
+[2025-09-30 02:24:33] Mencoba include 'koneksi.php'
+[2025-09-30 02:25:44] Mulai login_proc.php
+[2025-09-30 02:25:44] Mencoba include 'koneksi.php'
+[2025-09-30 02:25:49] Mulai login_proc.php
+[2025-09-30 02:25:49] Mencoba include 'koneksi.php'
+[2025-09-30 02:30:22] Mulai login_proc.php
+[2025-09-30 02:30:22] Mencoba include 'koneksi.php'
+[2025-09-30 02:30:53] Mulai login_proc.php
+[2025-09-30 02:30:53] Mencoba include 'koneksi.php'
+[2025-09-30 02:34:14] Mulai login_proc.php
+[2025-09-30 02:34:14] Mencoba include 'koneksi.php'
+[2025-09-30 02:35:59] Mulai login_proc.php
+[2025-09-30 02:35:59] Mencoba include 'koneksi.php'
+[2025-09-30 02:36:15] Mulai login_proc.php
+[2025-09-30 02:36:15] Mencoba include 'koneksi.php'
+[2025-09-30 02:36:33] Mulai login_proc.php
+[2025-09-30 02:36:33] Mencoba include 'koneksi.php'
+[2025-09-30 02:39:33] Mulai login_proc.php
+[2025-09-30 02:39:33] Mencoba include 'koneksi.php'
+[2025-09-30 02:39:49] Mulai login_proc.php
+[2025-09-30 02:39:49] Mencoba include 'koneksi.php'
+[2025-09-30 02:47:45] Mulai login_proc.php
+[2025-09-30 02:47:45] Mencoba include 'koneksi.php'
+[2025-09-30 03:10:50] Mulai login_proc.php
+[2025-09-30 03:10:50] Mencoba include 'koneksi.php'
+[2025-09-30 03:10:58] Mulai login_proc.php
+[2025-09-30 03:10:58] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:02] Mulai login_proc.php
+[2025-09-30 03:13:02] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:38] Mulai login_proc.php
+[2025-09-30 03:13:38] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:38] Mulai login_proc.php
+[2025-09-30 03:13:38] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:39] Mulai login_proc.php
+[2025-09-30 03:13:39] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:39] Mulai login_proc.php
+[2025-09-30 03:13:39] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:39] Mulai login_proc.php
+[2025-09-30 03:13:39] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:39] Mulai login_proc.php
+[2025-09-30 03:13:39] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:39] Mulai login_proc.php
+[2025-09-30 03:13:39] Mencoba include 'koneksi.php'
+[2025-09-30 03:13:49] Mulai login_proc.php
+[2025-09-30 03:13:49] Mencoba include 'koneksi.php'
+[2025-09-30 03:14:28] Mulai login_proc.php
+[2025-09-30 03:14:28] Mencoba include 'koneksi.php'
+[2025-09-30 03:14:28] Mulai login_proc.php
+[2025-09-30 03:14:28] Mencoba include 'koneksi.php'
+[2025-09-30 03:22:35] Mulai login_proc.php
+[2025-09-30 03:22:35] Mencoba include 'koneksi.php'
+[2025-09-30 06:24:06] Mulai login_proc.php
+[2025-09-30 06:24:06] Mencoba include 'koneksi.php'
+[2025-09-30 06:24:27] Mulai login_proc.php
+[2025-09-30 06:24:27] Mencoba include 'koneksi.php'
+[2025-09-30 07:22:54] Mulai login_proc.php
+[2025-09-30 07:22:54] Mencoba include 'koneksi.php'
+[2025-09-30 07:22:54] DB connected. Host info: Localhost via UNIX socket
+[2025-09-30 07:22:54] POST diterima. username raw: '003429' -> processed: '003429'. password length: 10 (masked)
+[2025-09-30 07:22:54] Mencoba koneksi LDAP ke ldap://ASIASHARP.com:389 untuk user GZB003429@ASIASHARP.COM
+[2025-09-30 07:22:54] LDAP extension tidak tersedia di PHP (function ldap_connect tidak ditemukan). Akan lanjut cek DB internal.
+[2025-09-30 07:22:54] LDAP tidak berhasil atau tidak tersedia => cek DB local users.
+[2025-09-30 07:22:54] DB lookup selesai. rows = 1
+[2025-09-30 07:22:54] Login DB FAILED: password salah untuk user 003429
+[2025-09-30 07:23:37] Mulai login_proc.php
+[2025-09-30 07:23:37] Mencoba include 'koneksi.php'
+[2025-09-30 07:23:37] DB connected. Host info: Localhost via UNIX socket
+[2025-09-30 07:23:37] POST diterima. username raw: '003429' -> processed: '003429'. password length: 10 (masked)
+[2025-09-30 07:23:37] Mencoba koneksi LDAP ke ldap://ASIASHARP.com:389 untuk user GZB003429@ASIASHARP.COM
+[2025-09-30 07:23:37] LDAP extension tidak tersedia di PHP (function ldap_connect tidak ditemukan). Akan lanjut cek DB internal.
+[2025-09-30 07:23:37] LDAP tidak berhasil atau tidak tersedia => cek DB local users.
+[2025-09-30 07:23:37] DB lookup selesai. rows = 1
+[2025-09-30 07:23:37] Login DB FAILED: password salah untuk user 003429
+[2025-09-30 07:25:54] Mulai login_proc.php
+[2025-09-30 07:25:54] Mencoba include 'koneksi.php'
+[2025-09-30 07:25:54] DB connected. Host info: Localhost via UNIX socket
+[2025-09-30 07:25:54] POST diterima. username raw: 'admin' -> processed: 'admin'. password length: 7 (masked)
+[2025-09-30 07:25:54] Mencoba koneksi LDAP ke ldap://ASIASHARP.com:389 untuk user GZBadmin@ASIASHARP.COM
+[2025-09-30 07:25:54] LDAP extension tidak tersedia di PHP (function ldap_connect tidak ditemukan). Akan lanjut cek DB internal.
+[2025-09-30 07:25:54] LDAP tidak berhasil atau tidak tersedia => cek DB local users.
+[2025-09-30 07:25:54] DB lookup selesai. rows = 1
+[2025-09-30 07:25:54] Login DB FAILED: password salah untuk user admin
+[2025-09-30 07:26:33] Mulai login_proc.php
+[2025-09-30 07:26:33] Mencoba include 'koneksi.php'
+[2025-09-30 07:26:33] DB connected. Host info: Localhost via UNIX socket
+[2025-09-30 07:26:33] POST diterima. username raw: '000642' -> processed: '000642'. password length: 6 (masked)
+[2025-09-30 07:26:33] Mencoba koneksi LDAP ke ldap://ASIASHARP.com:389 untuk user GZB000642@ASIASHARP.COM
+[2025-09-30 07:26:33] LDAP extension tidak tersedia di PHP (function ldap_connect tidak ditemukan). Akan lanjut cek DB internal.
+[2025-09-30 07:26:33] LDAP tidak berhasil atau tidak tersedia => cek DB local users.
+[2025-09-30 07:26:33] DB lookup selesai. rows = 1
+[2025-09-30 07:26:33] Login DB SUCCESS untuk user 000642 (password cocok). Set session.
+[2025-09-30 07:26:33] Session data set: username=000642, name=Suhenda
+[2025-09-30 07:26:33] DEBUG mode ON: Tidak redirect. Seharusnya redirect ke index_login.php

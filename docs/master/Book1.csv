@@ -1,0 +1,141 @@
+device,type,process_code,name,docno
+sl56,startup,sl56-s-dbm,Pin Die Bonding 1 Machine ATOM SEIMITSU MACHINE,SL-P1-006-0
+sl56,startup,sl56-s-ldb1,LD Die Bonding 1 Machine,SL-D1-005-3
+sl56,startup,sl56-s-ldb2,LD Die Bonding 2 Machine,SL-D2-003-13
+sl56,startup,sl56-s-ldsm,LDSM Machine,SL-LM-002-1
+sl56,startup,sl56-s-ag,AG Paste Hardening,SL-D2-006-02
+sl56,startup,sl56-s-wb1,Wire Bonding,SL-WB-002-10
+sl56,startup,sl56-s-wb2,Wire Bonding Kaijo Machine,SL-WB-007-2
+sl56,startup,sl56-s-cs1,Cap Seal,SL-CS-002-6
+sl56,startup,sl56-s-cs2,Cap Seal Daitoh Machine,SL-CS-010-0
+sl56,startup,sl56-s-bi1,Burn In,SL-BI-002-06
+sl56,startup,sl56-s-bi2,Burn In Daitoh Machine,SL-BI-005-0
+sl56,startup,sl56-s-bi3,Set Reset Burn In Normal Mode,SL-BI-006-0
+sl56,startup,sl56-s-bi4,Set Reset Burn In Red Mode GHZ002A4,SL-BI-007-1
+sl56,startup,sl56-s-ht1,Hot Test,SL-HT-003-3
+sl56,startup,sl56-s-ht2,Hot Test Red,SL-HT-004-2
+sl56,startup,sl56-s-ft1,Final Test,SL-FT-010-1
+sl56,startup,sl56-s-ft2,Final Test LBP Type,SL-FT-005-2
+sl56,startup,sl56-s-ft3,Final Test LD1360AHP,SL-FT-009-2
+sl56,startup,sl56-s-ft4,Final Test LD1360A,SL-FT-010-1
+sl56,startup,sl56-s-lt,Leak Testing,SL-LT-003-0
+sl56,startup,sl56-s-vi,Visual Inspection,SL-VI-003-01
+sl56,startup,sl56-s-bi5,Burn In GHZ002A4 (GH0632BA2GL),SL-BI-008-0
+sl56,foregoing,sl56-f-fcs,Foregoing Cap Seal,SL-CS-009-4
+sl56,foregoing,sl56-f-fldb1,Foregoing LD Die Bonding 1,SL-DB-001
+sl56,foregoing,sl56-f-fldsm,Foregoing LDSM,SL-LM-001-8
+sl56,production,sl56-p-dbm,PIN Die Bonding Machine,SL-P1-001-12
+sl56,production,sl56-p-db1,LD Die Bonding 1,SL-D1-001-25
+sl56,production,sl56-p-db2,LD Die Bonding 2,SL-D2-001-2
+sl56,production,sl56-p-ld2,LD 2 Control,SL-D2-004-01
+sl56,production,sl56-p-ldsm,LDSM Machine,SL-LM-001-8
+sl56,production,sl56-p-ldsmqc,Inspection LDSM Control,SL-LM-003-00
+sl56,production,sl56-p-ag,AG Paste Hardening,SL-D2-005-03
+sl56,production,sl56-p-wb,Wire Bonding,SL-WB-001-8
+sl56,production,sl56-p-wbh,Wire Bonding High Power,SL-WB-008-5
+sl56,production,sl56-p-m,Marking,SL-MK-001-01
+sl56,production,sl56-p-bi,Burn In,SL-BI-001-03
+sl56,production,sl56-p-cs,Cap Seal,SL-CS-009-3
+sl56,production,sl56-p-ht,Hot Test,SL-HT-002-00
+sl56,production,sl56-p-lt,Leak Testing,SL-LT-001-01
+sl56,production,sl56-p-ft1,Final Test (Blue Laser/ Green Laser/ Violet/ Cyan Laser),SL-FT-007-2
+sl56,production,sl56-p-ft2,Final Test,SL-FT-001-03
+sl56,production,sl56-p-vi,Visual Inspection,SL-VI-001-03
+fl18,startup,fl18-s-db1c,LD Die Bonding 1 Type GH17P28F8CL,FF-D1-007-1
+fl18,startup,fl18-s-db1d,LD Die Bonding 1 Type GH17P28A8C2,FF-D1-006-3
+fl18,startup,fl18-s-bi,Burn In,FF-BI-006-1
+fl18,startup,fl18-s-mk,Marking Hardening Oven,FF-MK-004-1
+fl18,startup,fl18-s-wb4,Wire Bonding Frame Laser 1.3,FF-WB-007-2
+fl18,startup,fl18-s-db1a,LD Die Bonding 1 Type GH16PSeries,FF-D1-002-6
+fl18,startup,fl18-s-db1b,LD Die Bonding 1 Type GH15*30*8C* / GH3*****C*,FF-D1-009-15
+fl18,startup,fl18-s-wb1,Wire Bonding Extreme Machine,FF-WB-009-1
+fl18,startup,fl18-s-wb2,Wire Bonding ASM Machine,FF-WB-008-3
+fl18,startup,fl18-s-db2,LD Die Bonding 2 Machine,FF-D2-002-12
+fl18,startup,fl18-s-wb3,Wire Bonding,FF-WB-002-9
+fl18,startup,fl18-s-ag,Ag Paste Hardening,FF-D2-006-2
+fl18,startup,fl18-s-cs,Cap Set,FF-CS-005-2
+fl18,startup,fl18-s-vi,Vacum JIG,FF-VI-002-2
+fl18,startup,fl18-s-tbc,Tie Bar Cutting,FF-TC-002-3
+fl18,startup,fl18-s-lc,Lead Cutting,FF-LC-002-3
+fl18,startup,fl18-s-csa,Cap Set,FF-CS-002-4
+fl18,startup,fl18-s-ft1,Verification Final Test ,MP-FFFT-002
+fl18,startup,fl18-s-ft2,Periodical Final Testing Machine,MP-FFFT-001-1
+fl18,foregoing,fl18-f-fdb1,Foregoing Die Bonding 1,FF-D1-004-17
+fl18,foregoing,fl18-f-fdb2,Foregoing Die Bonding 2,FF-D2-003-11
+fl18,production,fl18-p-db1,LD Die Bonding 1,FF-D1-001-21
+fl18,production,fl18-p-db2,LD Die Bonding 2,FF-D2-001-10
+fl18,production,fl18-p-cs,Cap Set,FF-CS-004-01
+fl18,production,fl18-p-tc,Tie Bar Cutting,FF-TC-001-06
+fl18,production,fl18-p-lc,Lead Cutting,FF-LC-001-06
+fl18,production,fl18-p-ft1,Final Test GH15 series,FF-FT-004-00
+fl18,production,fl18-p-ag,Ag Paste Hardening,FF-D2-005-03
+fl18,production,fl18-p-wb,Wire Bonding,FF-WB-001-06
+fl18,production,fl18-p-ft2,Final Test GH33series,FF-FT-003-01
+fl18,production,fl18-p-bi,Burn In Manual,FF-BI-001-03
+fl18,production,fl18-p-m1,Hardening of Ink,FF-MK-003-03
+fl18,production,fl18-p-m2,Marking,FF-MK-001-03
+fl18,production,fl18-p-ftbc,Inspection tie Bar Cutting,FF-TC-003-2
+fl18,production,fl18-p-db2qc,Inspection LD D/B 2 Control,FF-D2-004-2
+fl18,production,fl18-p-wbqc,Inpsection Wire Bonding,FF-WB-003-7
+sl33,startup,sl33-s-db1a,Die Bonding 1 Machine GH06510F4A* Series,NS-D1-011-5
+sl33,startup,sl33-s-cs,Cap Seal Machine DAITOH HCP-2000 (High Speed Without Baking),NS-CS-009-2
+sl33,startup,sl33-s-db1b,Die Bonding 1 Machine GH07P28F4C2,NS-D1-014-0
+sl33,startup,sl33-s-db2a,Die Bonding 2 Manual Machine,NS-D2-002-7
+sl33,startup,sl33-s-bi,Burn In,NS-BI-020-2
+sl33,startup,sl33-s-ag,Ag Paste Hardening,NS-D2-006-5
+sl33,startup,sl33-s-db2b,Die Bonding 2 Auto Machine,NS-D2-009-11
+sl33,startup,sl33-s-db2c,Die Bonding 2 Auto Machine (High Speed),NS-D2-016-5
+sl33,foregoing,sl33-f-fcs,Foregoing Cap Seal,NS-CS-017-5
+sl33,production,sl33-p-db1a,Die Bonding 1 Type GH07P28F4C2,NS-D1-013-0
+sl33,production,sl33-p-m,Marking,NS-MK-001-2
+sl33,production,sl33-p-wb,Wire Bonding,NS-WB-012-1
+sl33,production,sl33-p-db1b,"Die Bonding 1 Type (GH06510F4A, GH06510F4AK & GH07P28F4C",NS-D1-012-4
+sl33,production,sl33-p-ft1,Final Test Type (GH06510F4A & GH06510F4AK),NS-FT-001-6
+sl33,production,sl33-p-ft2,Final Test Type GH07P28F4C,NS-FT-003-0
+sl33,production,sl33-p-cs,Cap Seal,NS-CS-009-2
+sl38,startup,sl38-s-db1,Die Bonding 1,SM-P1-002-0
+sl38,startup,sl38-s-wb,Wire Bonding (KAIJO MACHINE FB-910-LDW),SM-WB-002-0
+sl38,startup,sl38-s-cs,Cap Seal (DAITOH MACHINE),SM-CS-002-0
+sl38,startup,sl38-s-m,Marking,SM-MK-002-0
+sl38,startup,sl38-s-ft,Final Test (ALPHAX LD1360AHP),SM-FT-002-0
+sl38,startup,sl38-s-bi,BURN IN (DAITOH MACHINE DSLD-4000H-HV),SM-BI-002-0
+sl38,startup,sl38-s-ldsm,LDSM MACHINE,SM-LM-002-0
+sl38,startup,sl38-s-ht,Hot Test,SM-HT-002-1
+sl38,startup,sl38-s-lt,Leak Test,SM-LT-002-1
+sl38,startup,sl38-s-pht,Periodical Hot Test,MP-SMHT-001-0
+sl38,foregoing,sl38-f-fcs,Foregoing Cap Seal,SM-CS-001-00
+sl38,foregoing,sl38-f-fldsm,Foregoing LDSM Machine,SM-LM-001-1
+sl38,production,sl38-p-mp,Metal Paste Hardening,SM-P1-005-0
+sl38,production,sl38-p-wb,Wire Bonding,SM-WB-001-0
+sl38,production,sl38-p-het,Helium Testing,SM-HT-001-00
+sl38,production,sl38-p-bi,Burn In,SM-BI-001-0
+sl38,production,sl38-p-m,Marking,SM-MK-001-0
+sl38,production,sl38-p-lt,Leak Testing,SM-LT-001-0
+sl38,production,sl38-p-cs,Cap Seal,SM-CS-001-00
+sl38,production,sl38-p-ft,Final Test,SM-FT-001-0
+sl38,production,sl38-p-db1,Die Bonding 1,SM-P1-001-1
+sl38,production,sl38-p-ldsm,LDSM Machine,SM-LM-001-1
+sl38,production,sl38-p-ht,Hot Test,SM-HT-003-0
+sl38,production,sl38-p-ldsmqc,Inspection LDSM Control,SM-LM-003-1
+sl38,production,sl38-p-dbqc,Inspection LD D/B Control,SM-P1-004-0
+sl38,production,sl38-p-wbqc,Inspection Wire Bonding,SM-WB-003-0
+sl90,startup,sl90-s-ht,Hot Test,BG-HT-002-0
+sl90,startup,sl90-s-ldsm,LDSM Machine,BG-LM-002-0
+sl90,startup,sl90-s-wb,Wire Bonding (KAIJO MACHINE FB-910 LDW),BG-WB-002-0
+sl90,startup,sl90-s-cs,Cap Seal (DAITOH MACHINE),BG-CS-002-0
+sl90,startup,sl90-s-ft,Final Test,BG-FT-002-0
+sl90,startup,sl90-s-bi,Burn In,BG-BI-002-0
+sl90,startup,sl90-s-lt,Leak Testing,BG-LT-002-1
+sl90,foregoing,sl90-f-fldsm,Foregoing LDSM Machine,BG-LM-001-0
+sl90,foregoing,sl90-f-cs,Foregoing Cap seal,BG-CS-001-0
+sl90,production,sl90-p-ldsm,LDSM Machine,BG-LM-001-0
+sl90,production,sl90-p-wb,Wire Bonding,BG-WB-001-0
+sl90,production,sl90-p-cs,Cap Seal,BG-CS-001-0
+sl90,production,sl90-p-ht,Hot Test,BG-HT-001-0
+sl90,production,sl90-p-ft,Final Test,BG-FT-001-0
+sl90,production,sl90-p-lt,Leak Testing,BG-LT-001-0
+sl90,production,sl90-p-hg,Helium Gas,BG-HG-001-0
+sl90,production,sl90-p-bi,Burn In,BG-BI-001-1
+sl90,production,sl90-p-vi,Visual Inspection,BG-VI-001-0
+sl90,production,sl90-p-wbqc,Inspection Wire Bonding,BG-WB-003-0
+sl90,production,sl90-p-ldsmqc,Inspection LDSM Control,BG-LM-003-0

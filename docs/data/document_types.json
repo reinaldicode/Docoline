@@ -1,0 +1,251 @@
+[
+    {
+        "id": "procedure",
+        "name": "Procedure",
+        "has_submenu": false,
+        "submenu": [],
+        "filter_config": {
+            "section_dept": true,
+            "section_prod": false,
+            "device": false,
+            "process": false,
+            "status": true,
+            "category": false,
+            "type": false,
+            "language": false
+        }
+    },
+    {
+        "id": "wi",
+        "name": "WI",
+        "has_submenu": true,
+        "submenu": [
+            {
+                "id": "wi_production",
+                "name": "WI Production",
+                "filter_config": {
+                    "section_dept": false,
+                    "section_prod": true,
+                    "status": true,
+                    "category": true,
+                    "device": true,
+                    "process": true,
+                    "type": false,
+                    "language": false
+                },
+                "_note": "Shows documents with device != '-' (production devices)"
+            },
+            {
+                "id": "wi_other",
+                "name": "WI Other",
+                "filter_config": {
+                    "section_dept": true,
+                    "section_prod": false,
+                    "status": true,
+                    "category": true,
+                    "device": false,
+                    "process": false,
+                    "type": false,
+                    "language": false
+                },
+                "_note": "Shows documents with device = '-' or empty (non-production)"
+            }
+        ],
+        "filter_config": {
+            "section_dept": true,
+            "section_prod": false,
+            "status": true,
+            "category": true,
+            "device": false,
+            "process": false,
+            "type": false,
+            "language": false
+        },
+        "use_custom_file": false,
+        "custom_file": ""
+    },
+    {
+        "id": "form",
+        "name": "Form",
+        "has_submenu": true,
+        "submenu": [
+            {
+                "id": "form_production",
+                "name": "Form Production",
+                "filter_config": {
+                    "section_dept": false,
+                    "section_prod": true,
+                    "status": true,
+                    "category": true,
+                    "device": true,
+                    "process": true,
+                    "type": false,
+                    "language": false
+                },
+                "_note": "Shows documents with device != '-' (production devices)"
+            },
+            {
+                "id": "form_other",
+                "name": "Form Other",
+                "filter_config": {
+                    "section_dept": true,
+                    "section_prod": false,
+                    "status": true,
+                    "category": true,
+                    "device": false,
+                    "process": false,
+                    "type": false,
+                    "language": false
+                },
+                "_note": "Shows documents with device = '-' or empty (non-production)"
+            }
+        ],
+        "filter_config": {
+            "section_dept": true,
+            "section_prod": false,
+            "device": false,
+            "process": false,
+            "status": true,
+            "category": false,
+            "type": false,
+            "language": false
+        }
+    },
+    {
+        "id": "ms_&_rohs",
+        "name": "MS & ROHS",
+        "has_submenu": false,
+        "submenu": [],
+        "filter_config": {
+            "section_dept": true,
+            "section_prod": false,
+            "status": true,
+            "category": true,
+            "device": false,
+            "process": false,
+            "type": true,
+            "language": false
+        },
+        "use_custom_file": false,
+        "custom_file": ""
+    },
+    {
+        "id": "monitor_sample",
+        "name": "Monitor Sample",
+        "has_submenu": false,
+        "submenu": [],
+        "filter_config": {
+            "section_dept": false,
+            "section_prod": true,
+            "device": true,
+            "process": true,
+            "status": true,
+            "category": true,
+            "type": false,
+            "language": false
+        },
+        "use_custom_file": false,
+        "custom_file": ""
+    },
+    {
+        "id": "msds",
+        "name": "MSDS",
+        "has_submenu": false,
+        "submenu": [],
+        "filter_config": {
+            "section_dept": false,
+            "section_prod": true,
+            "status": true,
+            "category": true,
+            "device": true,
+            "process": true,
+            "type": false,
+            "language": false
+        },
+        "use_custom_file": false,
+        "custom_file": ""
+    },
+    {
+        "id": "manual",
+        "name": "Manual",
+        "has_submenu": false,
+        "submenu": [],
+        "filter_config": {
+            "section_dept": false,
+            "section_prod": false,
+            "device": false,
+            "process": false,
+            "status": false,
+            "category": false,
+            "type": false,
+            "language": true
+        },
+        "use_custom_file": false,
+        "custom_file": ""
+    },
+    {
+        "id": "obsolate",
+        "name": "Obsolate",
+        "has_submenu": false,
+        "submenu": [],
+        "filter_config": {
+            "section_dept": true,
+            "section_prod": false,
+            "status": false,
+            "category": true,
+            "device": false,
+            "process": false,
+            "type": true,
+            "language": false
+        },
+        "use_custom_file": false,
+        "custom_file": ""
+    },
+    {
+        "id": "test",
+        "name": "test",
+        "has_submenu": true,
+        "submenu": [
+            {
+                "id": "test_prod",
+                "name": "test prod",
+                "filter_config": {
+                    "section_dept": false,
+                    "section_prod": true,
+                    "device": true,
+                    "process": true,
+                    "status": true,
+                    "category": true,
+                    "type": false,
+                    "language": false
+                }
+            },
+            {
+                "id": "test_other",
+                "name": "test other",
+                "filter_config": {
+                    "section_dept": true,
+                    "section_prod": false,
+                    "device": false,
+                    "process": false,
+                    "status": true,
+                    "category": true,
+                    "type": false,
+                    "language": false
+                }
+            }
+        ],
+        "filter_config": {
+            "section_dept": true,
+            "section_prod": false,
+            "device": false,
+            "process": false,
+            "status": true,
+            "category": false,
+            "type": false,
+            "language": false
+        },
+        "use_custom_file": false,
+        "custom_file": ""
+    }
+]
