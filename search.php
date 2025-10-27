@@ -33,6 +33,7 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Search Dokumen</title>
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +47,8 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
             background-image: url("images/white.jpeg"); 
             background-color: #cccccc; 
             background-repeat: no-repeat; 
-            background-attachment: fixed; 
+            background-attachment: fixed;
+            padding-top: 120px; /* Beri ruang untuk navbar fixed */
         }
         .search-card { 
             background: #fff; 
@@ -71,7 +73,7 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
         /* ===== Table Transparan ===== */
         .table-modern {
             width: 100%;
-            background: transparent; /* transparan */
+            background: transparent;
             box-shadow: none;
         }
         .table-modern thead {
@@ -106,6 +108,7 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
         }
         
         @media(max-width:767px){
+            body { padding-top: 150px; }
             .search-card { padding:12px; }
             .controls .btn { margin-bottom:8px; }
         }
@@ -126,7 +129,6 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
     </script>
 </head>
 <body>
-<br/><br/>
 
 <div class="container">
     <div class="search-card">
@@ -378,8 +380,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     <?php if ($isAdmin): ?>
                     <th>Action</th>
                     <?php endif; ?>
-                    <?php if ($isAdmin || $isOriginator): ?>
-                    <th>Sosialisasi</th>
+                    <?php if ($isLoggedIn): /* ✅ Kolom tampil untuk SEMUA user yang login */ ?>
+                    <th>Evidence</th>
                     <?php endif; ?>
                 </tr>
             </thead>
@@ -456,24 +458,31 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                         echo '</td>';
                     }
                     
-                    // ===== KOLOM SOSIALISASI - UNTUK ADMIN DAN ORIGINATOR =====
-                    if ($isAdmin || $isOriginator) {
+                    // ===== KOLOM SOSIALISASI ✅ =====
+                    if ($isLoggedIn) { 
                         echo '<td style="white-space:nowrap;">';
+                        
                         if ($has_sos) {
-                            // Jika sudah ada bukti sosialisasi - tampilkan tombol lihat (biru)
-                            echo '<a href="lihat_sosialisasi.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Sosialisasi">
+                            // ✅ Jika SUDAH ada file: Tampilkan tombol "Lihat" (SEMUA USER)
+                            echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">
                                     <span class="glyphicon glyphicon-file"></span> Lihat
                                   </a>';
                         } else {
-                            // Jika belum ada - tampilkan tombol upload (hijau)
-                            echo '<button type="button"
-                                    class="btn btn-xs btn-success btn-upload-sos"
-                                    data-drf="'.htmlspecialchars($row['no_drf']).'"
-                                    data-nodoc="'.htmlspecialchars($row['no_doc']).'"
-                                    title="Upload Bukti Sosialisasi">
-                                    <span class="glyphicon glyphicon-upload"></span> Upload
-                                  </button>';
+                            // ✅ Jika BELUM ada file: Tampilkan tombol "Upload" (HANYA ADMIN & ORIGINATOR)
+                            if ($isAdmin || $isOriginator) {
+                                echo '<button type="button"
+                                        class="btn btn-xs btn-success btn-upload-sos"
+                                        data-drf="'.htmlspecialchars($row['no_drf']).'"
+                                        data-nodoc="'.htmlspecialchars($row['no_doc']).'"
+                                        title="Upload Evidence">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                      </button>';
+                            } else {
+                                // ✅ Approver & PIC: Tampilkan pesan "Belum ada"
+                                echo '<span class="text-muted" style="font-size:11px;">Belum ada</span>';
+                            }
                         }
+                        
                         echo '</td>';
                     }
                     
@@ -549,18 +558,18 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </div>
 <?php endif; ?>
 
-<?php if ($isAdmin || $isOriginator): ?>
+<?php if ($isAdmin || $isOriginator): /* ✅ Modal HANYA untuk Admin & Originator */ ?>
 <!-- ===== MODAL UPLOAD SOSIALISASI (ADMIN & ORIGINATOR) ===== -->
 <div class="modal fade" id="modalSosialisasi" tabindex="-1" role="dialog" aria-labelledby="modalSosLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="POST" action="upload_sosialisasi.php" enctype="multipart/form-data">
+            <form method="POST" action="upload_Evidence.php" enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="modalSosLabel">Upload Bukti Sosialisasi</h4>
+                    <h4 class="modal-title" id="modalSosLabel">Upload Evidence</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Upload bukti sosialisasi untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
+                    <p>Upload Evidence untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
                     <input type="hidden" name="drf" id="modal_upload_drf" value="">
                     <?php
                     // CSRF token
@@ -579,12 +588,12 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     </div>
                     <div class="form-group">
                         <label>Catatan / Keterangan</label>
-                        <textarea name="notes" class="form-control" rows="3" placeholder="Tuliskan catatan atau keterangan sosialisasi..."></textarea>
+                        <textarea name="notes" class="form-control" rows="3" placeholder="Tuliskan catatan atau keterangan evidence..."></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                    <button type="submit" name="upload_sosialisasi" class="btn btn-success">Upload</button>
+                    <button type="submit" name="upload_evidence" class="btn btn-success">Upload</button>
                 </div>
             </form>
         </div>
@@ -632,8 +641,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         });
     }
 
-    <?php if ($isAdmin || $isOriginator): ?>
-    // Modal handlers (hanya untuk logged in users)
+    <?php if ($isAdmin || $isOriginator): /* ✅ Modal handler HANYA untuk Admin & Originator */ ?>
+    // Modal handlers (hanya untuk Admin & Originator)
     document.addEventListener('click', function(e){
         <?php if ($isAdmin): ?>
         // Modal Secure Document (hanya Admin)
@@ -645,7 +654,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         }
         <?php endif; ?>
         
-        // Modal Upload Sosialisasi (Admin dan Originator)
+        // Modal Upload Sosialisasi (Admin & Originator)
         if (e.target.closest('.btn-upload-sos')) {
             e.preventDefault();
             

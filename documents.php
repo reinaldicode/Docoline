@@ -667,6 +667,8 @@ if (isset($_GET['submit'])) {
     </div>
 <?php else: ?>
 
+<!-- BAGIAN TABEL - GANTI MULAI DARI BARIS 450an -->
+
 <div class="table-responsive">
     <table class="table table-hover">
         <thead style="background:#00FFFF;">
@@ -680,8 +682,8 @@ if (isset($_GET['submit'])) {
                 <th>Process</th>
                 <th>Section</th>
                 <th>Action</th>
-                <?php if ($isAdmin || $isOriginator): ?>
-                <th>Sosialisasi</th>
+                <?php if ($isLoggedIn): /* ✅ Tampilkan untuk SEMUA user yang login */ ?>
+                <th>Evidence</th>
                 <?php endif; ?>
             </tr>
         </thead>
@@ -761,25 +763,31 @@ if (isset($_GET['submit'])) {
                     ?>
                 </td>
 
-                <!-- Kolom Sosialisasi (untuk Admin dan Originator) -->
-                <?php if ($isAdmin || $isOriginator): ?>
-                <td>
-                    <?php if ($has_sos) { ?>
-                        <a href="lihat_sosialisasi.php?drf=<?php echo urlencode($info['no_drf']); ?>" 
-                           class="btn btn-xs btn-primary" title="Lihat Bukti Sosialisasi">
-                            Lihat
-                            <span class="glyphicon glyphicon-file"></span>
+                <!-- ===== KOLOM EVIDENCE - SAMA SEPERTI SEARCH.PHP ✅ ===== -->
+                <?php if ($isLoggedIn): ?>
+                <td style="white-space:nowrap;">
+                    <?php if ($has_sos): ?>
+                        <!-- Jika SUDAH ada file: Tombol "Lihat" (SEMUA USER) -->
+                        <a href="lihat_evidence.php?drf=<?php echo urlencode($info['no_drf']); ?>" 
+                           class="btn btn-xs btn-primary" title="Lihat Detail Evidence">
+                            <span class="glyphicon glyphicon-file"></span> Lihat
                         </a>
-                    <?php } else { ?>
-                        <a href="#" 
-                           class="btn btn-xs btn-success btn-upload-sos"
-                           data-drf="<?php echo htmlspecialchars($info['no_drf']); ?>"
-                           data-nodoc="<?php echo htmlspecialchars($info['no_doc']); ?>"
-                           title="Upload Bukti Sosialisasi">
-                            Upload
-                            <span class="glyphicon glyphicon-upload"></span>
-                        </a>
-                    <?php } ?>
+                    <?php else: ?>
+                        <!-- Jika BELUM ada file -->
+                        <?php if ($isAdmin || $isOriginator): ?>
+                            <!-- Admin & Originator: Tombol "Upload" -->
+                            <button type="button"
+                                class="btn btn-xs btn-success btn-upload-sos"
+                                data-drf="<?php echo htmlspecialchars($info['no_drf']); ?>"
+                                data-nodoc="<?php echo htmlspecialchars($info['no_doc']); ?>"
+                                title="Upload Evidence">
+                                <span class="glyphicon glyphicon-upload"></span> Upload
+                            </button>
+                        <?php else: ?>
+                            <!-- Approver & PIC: Text "Belum ada" -->
+                            <span class="text-muted" style="font-size:11px;">Belum ada</span>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </td>
                 <?php endif; ?>
             </tr>
@@ -871,18 +879,20 @@ if (isset($_GET['submit'])) {
         </div>
     </div>
 </div>
+<?php endif; ?>
 
-<!-- Modal Upload Sosialisasi (hanya untuk Admin) -->
+<?php if ($isAdmin || $isOriginator): /* ✅ Modal HANYA untuk Admin & Originator */ ?>
+<!-- Modal Upload Evidence (Admin & Originator) -->
 <div class="modal fade" id="modalSosialisasi" tabindex="-1" role="dialog" aria-labelledby="modalSosLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="POST" action="upload_sosialisasi.php" enctype="multipart/form-data">
+            <form method="POST" action="upload_evidence.php" enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="modalSosLabel">Upload Bukti Sosialisasi</h4>
+                    <h4 class="modal-title" id="modalSosLabel">Upload Evidence</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Upload bukti sosialisasi untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
+                    <p>Upload evidence untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
                     <input type="hidden" name="drf" id="modal_upload_drf" value="">
                     <?php
                     if (empty($_SESSION['csrf_token'])) {
@@ -895,17 +905,17 @@ if (isset($_GET['submit'])) {
                     ?>
                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                     <div class="form-group">
-                        <label>File bukti (pdf / jpg / jpeg] / png)</label>
-                        <input type="file" name="sos_file" class="form-control" accept=".pdf,image/*" required>
+                        <label>File bukti (pdf / jpg / png)</label>
+                        <input type="file" name="sos_file" class="form-control" accept=".pdf,.jpg,.jpeg,.png" required>
                     </div>
                     <div class="form-group">
                         <label>Catatan / Keterangan</label>
-                        <textarea name="notes" class="form-control" rows="3"></textarea>
+                        <textarea name="notes" class="form-control" rows="3" placeholder="Tuliskan catatan atau keterangan evidence..."></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-default" data-dismiss="modal" type="button">Batal</button>
-                    <button type="submit" name="upload_sosialisasi" class="btn btn-success">Upload</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="submit" name="upload_evidence" class="btn btn-success">Upload</button>
                 </div>
             </form>
         </div>
