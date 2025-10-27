@@ -491,6 +491,7 @@ function renderDocumentTable($result, $nrp, $state, $tipe, $section_type = '') {
                     <th width="150">No Document</th>
                     <th width="50">Rev.</th>
                     <th>Title</th>
+                    <!--  -->
                     <th width="100">Process</th>
                     <th width="100">Section</th>
                     <th width="100">Type</th>
