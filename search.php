@@ -10,22 +10,18 @@ $isOriginator = $isLoggedIn && (isset($_SESSION['state']) && $_SESSION['state'] 
 
 // Jika tidak login, set mode public (read-only)
 if (!$isLoggedIn) {
-    // Public mode: Include header tanpa session check
     if (file_exists('header_public.php')) {
         include('header_public.php');
     } else {
-        // Fallback jika header_public.php tidak ada
         include('header.php');
     }
 } else {
-    // Logged in mode: Include header normal
     include('header.php');
 }
 
 include 'koneksi.php';
 require_once('Connections/config.php');
 
-// Ambil session state untuk menentukan role user (backward compatibility)
 $state = $isLoggedIn && isset($_SESSION['state']) ? $_SESSION['state'] : '';
 $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
 ?>
@@ -48,7 +44,7 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
             background-color: #cccccc; 
             background-repeat: no-repeat; 
             background-attachment: fixed;
-            padding-top: 120px; /* Beri ruang untuk navbar fixed */
+            padding-top: 120px;
         }
         .search-card { 
             background: #fff; 
@@ -70,7 +66,6 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
         .btn-perpage .btn { margin-right:6px; }
         .perpage-active { box-shadow: inset 0 -3px 0 rgba(0,0,0,0.08); }
         
-        /* ===== Table Transparan ===== */
         .table-modern {
             width: 100%;
             background: transparent;
@@ -116,12 +111,10 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
 
     <script>
     $(document).ready(function() {
-        // Sanitasi untuk No. Document: ganti spasi dengan strip (-)
         $('input[name="doc_no"]').on('input', function() {
             this.value = this.value.replace(/ /g, '-');
         });
 
-        // Sanitasi untuk DRF: hanya izinkan angka
         $('input[name="drf"]').on('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
@@ -135,7 +128,6 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
         <h4 style="margin-top:0">Search Dokumen <small class="muted-small">(No Doc, Title, Employee ID, Type, Month, Year, DRF)</small></h4>
 
         <?php
-        // Get distinct doc_type untuk dropdown
         $types = [];
         $qtypes = "SELECT DISTINCT doc_type FROM docu WHERE doc_type IS NOT NULL AND doc_type <> '' ORDER BY doc_type";
         $rtypes = mysqli_query($link, $qtypes);
@@ -270,9 +262,23 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
 </div>
 
 <?php
+// ===== 🔥 HELPER FUNCTION: BUILD FILE PATH (HYBRID) =====
+function build_hybrid_file_path($row) {
+    $drf = intval($row['no_drf']);
+    $doc_type = $row['doc_type'];
+    $filename = $row['file'];
+    
+    // Legacy files (DRF ≤ 12955): Type/file.pdf
+    if ($drf <= 12955) {
+        return htmlspecialchars($doc_type . '/' . $filename);
+    }
+    
+    // New files (DRF > 12955): documents/Type/file.pdf
+    return htmlspecialchars('documents/' . $doc_type . '/' . $filename);
+}
+
 // Processing search
 if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) || isset($_GET['sort']) || isset($_GET['drf'])) {
-    // Sanitize input
     $doc_no = isset($_GET['doc_no']) ? mysqli_real_escape_string($link, trim($_GET['doc_no'])) : '';
     $title  = isset($_GET['title']) ? mysqli_real_escape_string($link, trim($_GET['title'])) : '';
     $empid  = isset($_GET['empid']) ? mysqli_real_escape_string($link, trim($_GET['empid'])) : '';
@@ -286,7 +292,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 
     $drf_search = isset($_GET['drf']) ? mysqli_real_escape_string($link, trim($_GET['drf'])) : '';
 
-    // Build WHERE clause
     $whereParts = [];
     if ($doc_no !== '') {
         $whereParts[] = "(no_doc LIKE '%$doc_no%')";
@@ -312,14 +317,12 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 
     $where = (count($whereParts) > 0) ? ' WHERE ' . implode(' AND ', $whereParts) : '';
 
-    // Pagination setup
     $isAll = ($perPageRaw === 'all');
     $perPage = $isAll ? 0 : (int)$perPageRaw;
     if (!$isAll && $perPage <= 0) $perPage = 20;
     $page = max(1, (int)($_GET['page'] ?? 1));
     $offset = ($page - 1) * $perPage;
 
-    // Count total rows
     $countSql = "SELECT COUNT(*) AS total FROM docu $where";
     $countRes = mysqli_query($link, $countSql);
     $totalRows = 0;
@@ -328,13 +331,11 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         mysqli_free_result($countRes);
     }
 
-    // Main query with sorting (ORDER BY no_drf)
     $orderDir = ($sort === 'oldest') ? 'ASC' : 'DESC';
     $sql = "SELECT * FROM docu $where ORDER BY no_drf $orderDir";
     if (!$isAll) $sql .= " LIMIT $offset,$perPage";
     $res = mysqli_query($link, $sql);
 
-    // Helper function untuk build pagination URL
     function build_page_url($page_number) {
         $params = $_GET;
         $params['page'] = $page_number;
@@ -343,7 +344,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         return htmlspecialchars($_SERVER['PHP_SELF'] . '?' . http_build_query($params));
     }
 
-    // Display result info
     if ($totalRows > 0) {
         $startRow = $isAll ? 1 : $offset + 1;
         $endRow   = $isAll ? $totalRows : min($offset + $perPage, $totalRows);
@@ -380,7 +380,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     <?php if ($isAdmin): ?>
                     <th>Action</th>
                     <?php endif; ?>
-                    <?php if ($isLoggedIn): /* ✅ Kolom tampil untuk SEMUA user yang login */ ?>
+                    <?php if ($isLoggedIn): ?>
                     <th>Evidence</th>
                     <?php endif; ?>
                 </tr>
@@ -389,7 +389,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                 <?php
                 $i = $isAll ? 1 : $offset + 1;
                 while ($row = mysqli_fetch_assoc($res)) {
-                    // Cek apakah ada bukti sosialisasi
                     $has_sos = !empty($row['sos_file']);
                     
                     echo '<tr>';
@@ -399,9 +398,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     echo '<td>'. htmlspecialchars($row['no_rev']) .'</td>';
                     echo '<td>'. htmlspecialchars($row['no_drf']) .'</td>';
 
-                    // File path logic
-                    $tempat = (isset($row['no_drf']) && intval($row['no_drf']) > 12955) ? $row['doc_type'] : 'document';
-                    $filePath = htmlspecialchars($tempat . '/' . $row['file']);
+                    // ===== 🔥 GUNAKAN HYBRID PATH =====
+                    $filePath = build_hybrid_file_path($row);
 
                     echo '<td><a href="'. $filePath .'" target="_blank">'. htmlspecialchars($row['title']) .'</a></td>';
                     echo '<td>'. htmlspecialchars($row['status']) .'</td>';
@@ -410,7 +408,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     echo '<td>'. htmlspecialchars($row['section']) .'</td>';
                     echo '<td>'. htmlspecialchars($row['device']) .'</td>';
                     
-                    // ===== DETAIL COLUMN - UNTUK SEMUA USER (termasuk public) =====
+                    // DETAIL COLUMN
                     echo '<td style="white-space:nowrap;">';
                     echo '<a class="btn btn-xs btn-info" title="Lihat Detail" href="detail.php?drf='.urlencode($row['no_drf']).'&no_doc='.urlencode($row['no_doc']).'">
                             <span class="glyphicon glyphicon-search"></span>
@@ -423,21 +421,18 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                           </a>';
                     echo '</td>';
                     
-                    // ===== ACTION COLUMN - HANYA UNTUK ADMIN =====
+                    // ACTION COLUMN (ADMIN ONLY)
                     if ($isAdmin) {
                         echo '<td style="white-space:nowrap;">';
                         
-                        // Edit button (biru)
                         echo '<a href="edit_doc.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Edit Doc">
                                 <span class="glyphicon glyphicon-pencil"></span>
                               </a>';
                         
-                        // Delete button (merah) with confirmation
                         echo '<a href="del_doc.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-danger" onClick="return confirm(\'Delete document '.htmlspecialchars($row['no_doc']).'?\')" title="Delete Doc">
                                 <span class="glyphicon glyphicon-remove"></span>
                               </a>';
                         
-                        // Secure Document button (hijau) - HANYA jika status Approved
                         if (isset($row['status']) && $row['status'] == 'Approved') {
                             echo '<a data-toggle="modal" data-target="#myModal2" 
                                      data-id="'.htmlspecialchars($row['no_drf']).'" 
@@ -449,7 +444,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                                   </a>';
                         }
                         
-                        // Ganti Doc button (orange/warning) - UNTUK SEMUA STATUS
                         echo '<a href="ganti_doc.php?drf='.urlencode($row['no_drf']).'&type='.urlencode($row['doc_type']).'" 
                                 class="btn btn-xs btn-warning" title="Ganti Doc">
                                 <span class="glyphicon glyphicon-refresh"></span> Ganti
@@ -458,17 +452,15 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                         echo '</td>';
                     }
                     
-                    // ===== KOLOM SOSIALISASI ✅ =====
+                    // EVIDENCE COLUMN
                     if ($isLoggedIn) { 
                         echo '<td style="white-space:nowrap;">';
                         
                         if ($has_sos) {
-                            // ✅ Jika SUDAH ada file: Tampilkan tombol "Lihat" (SEMUA USER)
                             echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">
                                     <span class="glyphicon glyphicon-file"></span> Lihat
                                   </a>';
                         } else {
-                            // ✅ Jika BELUM ada file: Tampilkan tombol "Upload" (HANYA ADMIN & ORIGINATOR)
                             if ($isAdmin || $isOriginator) {
                                 echo '<button type="button"
                                         class="btn btn-xs btn-success btn-upload-sos"
@@ -478,7 +470,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                                         <span class="glyphicon glyphicon-upload"></span> Upload
                                       </button>';
                             } else {
-                                // ✅ Approver & PIC: Tampilkan pesan "Belum ada"
                                 echo '<span class="text-muted" style="font-size:11px;">Belum ada</span>';
                             }
                         }
@@ -502,19 +493,16 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         if ($totalPages > 1) {
             echo '<nav><ul class="pagination justify-content-center">';
             
-            // Previous button
             if ($page > 1) {
                 echo '<li><a href="'.build_page_url($page-1).'">Prev</a></li>';
             }
             
-            // Page numbers
             $range = 2;
             for ($p = max(1, $page - $range); $p <= min($totalPages, $page + $range); $p++) {
                 $active = ($p==$page)?' class="active"':'';
                 echo '<li'.$active.'><a href="'.build_page_url($p).'">'.$p.'</a></li>';
             }
             
-            // Next button
             if ($page < $totalPages) {
                 echo '<li><a href="'.build_page_url($page+1).'">Next</a></li>';
             }
@@ -527,10 +515,10 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </div>
 <?php endif; ?>
 
-<?php } // end processing ?>
+<?php } ?>
 
 <?php if ($isAdmin): ?>
-<!-- ===== MODAL SECURE DOCUMENT (HANYA ADMIN) ===== -->
+<!-- MODAL SECURE DOCUMENT -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -558,8 +546,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </div>
 <?php endif; ?>
 
-<?php if ($isAdmin || $isOriginator): /* ✅ Modal HANYA untuk Admin & Originator */ ?>
-<!-- ===== MODAL UPLOAD SOSIALISASI (ADMIN & ORIGINATOR) ===== -->
+<?php if ($isAdmin || $isOriginator): ?>
+<!-- MODAL UPLOAD EVIDENCE -->
 <div class="modal fade" id="modalSosialisasi" tabindex="-1" role="dialog" aria-labelledby="modalSosLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -572,7 +560,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     <p>Upload Evidence untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
                     <input type="hidden" name="drf" id="modal_upload_drf" value="">
                     <?php
-                    // CSRF token
                     if (empty($_SESSION['csrf_token'])) {
                         if (function_exists('random_bytes')) {
                             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -592,7 +579,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                     <button type="submit" name="upload_evidence" class="btn btn-success">Upload</button>
                 </div>
             </form>
@@ -641,11 +628,11 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         });
     }
 
-    <?php if ($isAdmin || $isOriginator): /* ✅ Modal handler HANYA untuk Admin & Originator */ ?>
-    // Modal handlers (hanya untuk Admin & Originator)
+    <?php if ($isAdmin || $isOriginator): ?>
+    // Modal handlers
     document.addEventListener('click', function(e){
         <?php if ($isAdmin): ?>
-        // Modal Secure Document (hanya Admin)
+        // Modal Secure Document
         if (e.target.closest('.sec-file')) {
             const el = e.target.closest('.sec-file');
             document.querySelector('#myModal2 #drf').value = el.getAttribute('data-id') || '';
@@ -654,14 +641,14 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         }
         <?php endif; ?>
         
-        // Modal Upload Sosialisasi (Admin & Originator)
+        // Modal Upload Evidence
         if (e.target.closest('.btn-upload-sos')) {
             e.preventDefault();
             
-            // Reset form terlebih dahulu
+            // Reset form
             $('#modalSosialisasi').find('form')[0].reset();
             
-            // Isi data baru
+            // Set data
             const btn = e.target.closest('.btn-upload-sos');
             const drf = btn.getAttribute('data-drf');
             const nodoc = btn.getAttribute('data-nodoc');

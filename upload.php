@@ -28,6 +28,65 @@ function normalizeSection($section) {
     return trim($normalized);
 }
 
+/**
+ * ============================================================================
+ * FOLDER MANAGEMENT FUNCTION (HYBRID APPROACH)
+ * ============================================================================
+ * Create folder structure: documents/[DocumentType]/
+ * Auto-creates security files (.htaccess, index.php)
+ */
+function ensureDocumentFolder($type) {
+    // Base directory
+    $base_dir = 'documents/';
+    
+    // Sanitize type for folder name
+    $safe_type = trim($type);
+    $safe_type = preg_replace('/[^A-Za-z0-9 _\-&]/', '', $safe_type);
+    if ($safe_type === '') $safe_type = 'others';
+    $safe_dir_name = str_replace(' ', '_', $safe_type);
+    
+    // Full path: documents/[Type]/
+    $target_dir = $base_dir . $safe_dir_name . '/';
+    
+    // Step 1: Ensure base 'documents/' folder exists
+    if (!is_dir($base_dir)) {
+        if (@mkdir($base_dir, 0755, true)) {
+            // Create security files for base folder
+            file_put_contents($base_dir . '.htaccess', "Options -Indexes\n# Prevent directory listing\n");
+            file_put_contents($base_dir . 'index.php', '<?php header("Location: ../index.php"); exit(); ?>');
+            error_log("✓ Base folder created: " . $base_dir);
+        } else {
+            error_log("✗ Failed to create base folder: " . $base_dir);
+            return ['success' => false, 'path' => 'others/', 'message' => 'Cannot create base folder'];
+        }
+    }
+    
+    // Step 2: Ensure type-specific subfolder exists
+    if (!is_dir($target_dir)) {
+        if (@mkdir($target_dir, 0755, true)) {
+            // Create security files for subfolder
+            file_put_contents($target_dir . '.htaccess', "Options -Indexes\n# Prevent directory listing\n");
+            file_put_contents($target_dir . 'index.php', '<?php header("Location: ../../index.php"); exit(); ?>');
+            error_log("✓ Document folder created: " . $target_dir);
+            
+            return ['success' => true, 'path' => $target_dir, 'message' => 'Folder created successfully'];
+        } else {
+            // Fallback to documents/others/
+            $fallback = $base_dir . 'others/';
+            if (!is_dir($fallback)) {
+                @mkdir($fallback, 0755, true);
+                file_put_contents($fallback . '.htaccess', "Options -Indexes\n");
+                file_put_contents($fallback . 'index.php', '<?php header("Location: ../../index.php"); exit(); ?>');
+            }
+            error_log("✗ Failed to create folder: " . $target_dir . " - Using fallback: " . $fallback);
+            return ['success' => false, 'path' => $fallback, 'message' => 'Using fallback folder'];
+        }
+    }
+    
+    // Folder already exists
+    return ['success' => true, 'path' => $target_dir, 'message' => 'Folder exists'];
+}
+
 ?>
 
 <script type="text/javascript">
@@ -147,23 +206,19 @@ function disablefield()
     }
 
     function validasi(){
-        // var namaValid    = /^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z])$/;
-        // var emailValid   = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
         var nodoc         = formulir.nodoc.value;
         var norev         = formulir.norev.value;
-            var revto        = formulir.revto.value;
-            var type         = formulir.type1.value;
-            var cat     = formulir.cat.value;
-            var title       = formulir.title1.value;
-             var desc       = formulir.desc.value;
+        var revto        = formulir.revto.value;
+        var type         = formulir.type1.value;
+        var cat     = formulir.cat.value;
+        var title       = formulir.title1.value;
+        var desc       = formulir.desc.value;
            
         // File validation
         var file = formulir.file.files[0];
         var master = formulir.master.files[0];
 
         var pesan = '';
-        
-        
 
         if (nodoc== ''){
             pesan += '-Data Nomor Dokumen belum diisi\n';   
@@ -258,7 +313,7 @@ if (isset($_GET['type']) && trim($_GET['type']) !== '') {
                     </tr>
                     <tr>
                     <?php
-                    // y NORMALIZE section dari user session sebelum query
+                    // NORMALIZE section dari user session sebelum query
                     $sec_normalized = normalizeSection($sec);
                     
                     // Query berdasarkan id_section (yang sudah normalized)
@@ -266,7 +321,7 @@ if (isset($_GET['type']) && trim($_GET['type']) !== '') {
                     
                     $ses_sql = mysqli_query($link, $sql1);
                     
-                    //  SAFE CHECK: Pastikan query berhasil dan ada data
+                    // SAFE CHECK: Pastikan query berhasil dan ada data
                     if ($ses_sql && mysqli_num_rows($ses_sql) > 0) {
                         $row1 = mysqli_fetch_array($ses_sql);
                         $se = isset($row1['section_dept']) ? $row1['section_dept'] : '';
@@ -678,21 +733,18 @@ if (isset($_POST['submit']))
 
     $hist = isset($_POST['hist']) ? mysqli_real_escape_string($link, trim($_POST['hist'])) : '';
 
-    // sanitize type for folder name: allow only letters, numbers, space, -, _ and &
-    $safe_type = trim($type);
-    $safe_type = preg_replace('/[^A-Za-z0-9 _\-&]/', '', $safe_type);
-    if ($safe_type === '') $safe_type = 'others';
-    $safe_dir_name = str_replace(' ', '_', $safe_type) . '/';
-
-    // Ensure target dir exists
-    $target_dir = $safe_dir_name;
-    if (!is_dir($target_dir)) {
-        if (!@mkdir($target_dir, 0755, true)) {
-            // fallback to generic folder
-            $target_dir = 'others/';
-            if (!is_dir($target_dir)) @mkdir($target_dir, 0755, true);
-        }
+    // ========== HYBRID APPROACH: documents/[Type]/ ==========
+    
+    // Use ensureDocumentFolder function
+    $folderResult = ensureDocumentFolder($type);
+    $target_dir = $folderResult['path'];
+    
+    // Log folder creation for debugging
+    if (!$folderResult['success']) {
+        error_log("⚠️ Folder creation issue for type '{$type}': " . $folderResult['message']);
     }
+
+    // ========== END HYBRID APPROACH ==========
 
     // process document file
     $doc_filename = basename($_FILES["file"]["name"]);
@@ -702,14 +754,14 @@ if (isset($_POST['submit']))
     if (!move_uploaded_file($_FILES["file"]["tmp_name"], $target_file_doc)) {
         ?>
         <script language='javascript'>
-            alert('Upload File Document gagal. Periksa permission folder.');
+            alert('Upload File Document gagal. Path: <?php echo addslashes($target_dir); ?>\nPeriksa permission folder.');
             document.location='upload.php';
         </script>
         <?php
         exit;
     }
 
-    // process master file
+    // process master file (tetap di folder master/)
     $target_dir_master = "master/";
     if (!is_dir($target_dir_master)) @mkdir($target_dir_master, 0755, true);
     $master_filename = basename($_FILES["master"]["name"]);
@@ -738,9 +790,11 @@ if (isset($_POST['submit']))
         exit;
     }
 
-    // Prepare and run INSERT (use escaped values)
-    $nama_file = mysqli_real_escape_string($link, $doc_filename);
+    // ========== SIMPAN PATH RELATIF KE DATABASE ==========
+    // Simpan full relative path: documents/Procedure/PROC-001.pdf
+    $nama_file = mysqli_real_escape_string($link, $target_dir . $doc_filename);
     $nama_master = mysqli_real_escape_string($link, $master_filename);
+    // ========== END PATH HANDLING ==========
 
     // ========== INSERT WITH NORMALIZED SECTION ==========
     $sql="INSERT INTO docu(no_drf,user_id,uploader_name,email,dept,original_dept,no_doc,no_rev,rev_to,doc_type,section,original_section,device,process,title,descript,iso,seqtrain,dirtrain,file,history,status,tgl_upload,category,final,file_asli,reminder)
@@ -751,6 +805,9 @@ if (isset($_POST['submit']))
 
     if($res)
     {
+        // Log successful upload
+        error_log("✓ Document uploaded successfully - DRF: {$drf}, Type: {$type}, File: {$nama_file}");
+        
         // Decide post-insert navigation
         if(($state != 'Admin' or $cat != 'External' ) and ($type!='Material Spec' and $type!='ROHS' and $type!='MSDS'))
         {
@@ -806,9 +863,10 @@ if (isset($_POST['submit']))
     }
     else
     {
+        error_log("✗ Document upload failed - SQL Error: " . mysqli_error($link));
         ?>
         <script language='javascript'>
-        // alert('Document Upload Failed');
+        alert('Document Upload Failed. Please contact administrator.');
         document.location='upload.php';
         </script>
         <?php
