@@ -123,7 +123,7 @@ function buildFuzzyWhereClause($field, $keyword, $link) {
             background-color: #cccccc; 
             background-repeat: no-repeat; 
             background-attachment: fixed;
-            padding-top: 120px; /* Beri ruang untuk navbar fixed */
+            padding-top: 120px;
         }
         .search-card { 
             background: #fff; 
@@ -212,7 +212,6 @@ function buildFuzzyWhereClause($field, $keyword, $link) {
         <h4 style="margin-top:0">Search Dokumen <small class="muted-small">(No Doc, Title, Employee ID, Type, Month, Year, DRF)</small></h4>
 
         <?php
-        // Get distinct doc_type untuk dropdown
         $types = [];
         $qtypes = "SELECT DISTINCT doc_type FROM docu WHERE doc_type IS NOT NULL AND doc_type <> '' ORDER BY doc_type";
         $rtypes = mysqli_query($link, $qtypes);
@@ -350,9 +349,24 @@ function buildFuzzyWhereClause($field, $keyword, $link) {
 </div>
 
 <?php
+// ===== 🔥 HELPER FUNCTION: BUILD FILE PATH (HYBRID) =====
+function build_hybrid_file_path($row) {
+    $drf = intval($row['no_drf']);
+    $doc_type = $row['doc_type'];
+    $filename = $row['file'];
+    
+    // Legacy files (DRF ≤ 12955): Type/file.pdf
+    if ($drf <= 12955) {
+        return htmlspecialchars($doc_type . '/' . $filename);
+    }
+    
+    // New files (DRF > 12955): documents/Type/file.pdf
+    return htmlspecialchars('documents/' . $doc_type . '/' . $filename);
+}
+
 // Processing search
 if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) || isset($_GET['sort']) || isset($_GET['drf'])) {
-    // Sanitize input
+    // Sanitize input dengan FUZZY SEARCH support
     $doc_no_raw = isset($_GET['doc_no']) ? trim($_GET['doc_no']) : '';
     $title  = isset($_GET['title']) ? mysqli_real_escape_string($link, trim($_GET['title'])) : '';
     $empid  = isset($_GET['empid']) ? mysqli_real_escape_string($link, trim($_GET['empid'])) : '';
@@ -366,7 +380,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 
     $drf_search = isset($_GET['drf']) ? mysqli_real_escape_string($link, trim($_GET['drf'])) : '';
 
-    // Build WHERE clause
     $whereParts = [];
     
     // ===== FUZZY SEARCH untuk No Document =====
@@ -398,14 +411,12 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 
     $where = (count($whereParts) > 0) ? ' WHERE ' . implode(' AND ', $whereParts) : '';
 
-    // Pagination setup
     $isAll = ($perPageRaw === 'all');
     $perPage = $isAll ? 0 : (int)$perPageRaw;
     if (!$isAll && $perPage <= 0) $perPage = 20;
     $page = max(1, (int)($_GET['page'] ?? 1));
     $offset = ($page - 1) * $perPage;
 
-    // Count total rows
     $countSql = "SELECT COUNT(*) AS total FROM docu $where";
     $countRes = mysqli_query($link, $countSql);
     $totalRows = 0;
@@ -420,7 +431,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     if (!$isAll) $sql .= " LIMIT $offset,$perPage";
     $res = mysqli_query($link, $sql);
 
-    // Helper function untuk build pagination URL
     function build_page_url($page_number) {
         $params = $_GET;
         $params['page'] = $page_number;
@@ -429,7 +439,6 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         return htmlspecialchars($_SERVER['PHP_SELF'] . '?' . http_build_query($params));
     }
 
-    // Display result info
     if ($totalRows > 0) {
         $startRow = $isAll ? 1 : $offset + 1;
         $endRow   = $isAll ? $totalRows : min($offset + $perPage, $totalRows);
@@ -487,8 +496,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     echo '<td>'. htmlspecialchars($row['no_rev']) .'</td>';
                     echo '<td>'. htmlspecialchars($row['no_drf']) .'</td>';
 
-                    $tempat = (isset($row['no_drf']) && intval($row['no_drf']) > 12955) ? $row['doc_type'] : 'document';
-                    $filePath = htmlspecialchars($tempat . '/' . $row['file']);
+                    // ===== 🔥 GUNAKAN HYBRID PATH =====
+                    $filePath = build_hybrid_file_path($row);
 
                     echo '<td><a href="'. $filePath .'" target="_blank">'. htmlspecialchars($row['title']) .'</a></td>';
                     echo '<td>'. htmlspecialchars($row['status']) .'</td>';
@@ -497,6 +506,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     echo '<td>'. htmlspecialchars($row['section']) .'</td>';
                     echo '<td>'. htmlspecialchars($row['device']) .'</td>';
                     
+                    // ===== DETAIL COLUMN (UNTUK SEMUA USER) =====
                     echo '<td style="white-space:nowrap;">';
                     echo '<a class="btn btn-xs btn-info" title="Lihat Detail" href="detail.php?drf='.urlencode($row['no_drf']).'&no_doc='.urlencode($row['no_doc']).'">
                             <span class="glyphicon glyphicon-search"></span>
@@ -509,14 +519,18 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                           </a>';
                     echo '</td>';
                     
+                    // ===== ACTION COLUMN (HANYA ADMIN) =====
                     if ($isAdmin) {
                         echo '<td style="white-space:nowrap;">';
+                        
                         echo '<a href="edit_doc.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Edit Doc">
                                 <span class="glyphicon glyphicon-pencil"></span>
                               </a>';
+                        
                         echo '<a href="del_doc.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-danger" onClick="return confirm(\'Delete document '.htmlspecialchars($row['no_doc']).'?\')" title="Delete Doc">
                                 <span class="glyphicon glyphicon-remove"></span>
                               </a>';
+                        
                         if (isset($row['status']) && $row['status'] == 'Approved') {
                             echo '<a data-toggle="modal" data-target="#myModal2" 
                                      data-id="'.htmlspecialchars($row['no_drf']).'" 
@@ -527,14 +541,16 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                                     <span class="glyphicon glyphicon-play"></span>
                                   </a>';
                         }
+                        
                         echo '<a href="ganti_doc.php?drf='.urlencode($row['no_drf']).'&type='.urlencode($row['doc_type']).'" 
                                 class="btn btn-xs btn-warning" title="Ganti Doc">
                                 <span class="glyphicon glyphicon-refresh"></span> Ganti
                               </a>';
+                        
                         echo '</td>';
                     }
                     
-                    // ===== KOLOM EVIDENCE - SOLUSI CONFLICT ✅ =====
+                    // ===== EVIDENCE COLUMN (SEMUA USER YANG LOGIN) =====
                     if ($isLoggedIn) { 
                         echo '<td style="white-space:nowrap;">';
                         
@@ -573,6 +589,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     </div>
 
     <?php
+    // Pagination
     if (!$isAll && $totalRows > 0) {
         $totalPages = ceil($totalRows / $perPage);
         if ($totalPages > 1) {
@@ -600,9 +617,10 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </div>
 <?php endif; ?>
 
-<?php } ?>
+<?php } // end processing ?>
 
 <?php if ($isAdmin): ?>
+<!-- ===== MODAL SECURE DOCUMENT (HANYA ADMIN) ===== -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -612,6 +630,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
             </div>
             <div class="modal-body">
                 <form name="secure_doc" method="POST" action="process.php" enctype="multipart/form-data">
+                    <input type="hidden" name="drf" id="drf" class="form-control" value=""/>
+                    <input type="hidden" name="lama" id="lama" class="form-control" value=""/>
                     <input type="hidden" name="status" id="status" class="form-control" value=""/>
                     <div class="form-group">
                         <label>Upload New Secured File:</label>
@@ -642,6 +662,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     <p>Upload Evidence untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
                     <input type="hidden" name="drf" id="modal_upload_drf" value="">
                     <?php
+                    // CSRF token
                     if (empty($_SESSION['csrf_token'])) {
                         if (function_exists('random_bytes')) {
                             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -678,6 +699,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     const sortInput = document.getElementById('sortInput');
     const sortSelect = document.getElementById('sortSelect');
 
+    // Sort dropdown change handler
     if (sortSelect && sortInput) {
         sortSelect.addEventListener('change', function(){
             sortInput.value = this.value;
@@ -685,6 +707,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         });
     }
 
+    // Per page buttons handler
     document.querySelectorAll('.btn-perpage button').forEach(function(b){
         b.addEventListener('click', function(){
             const per = this.getAttribute('data-per');
@@ -700,6 +723,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         });
     });
 
+    // Reset button handler
     if (resetBtn && form) {
         resetBtn.addEventListener('click', function(e){
             e.preventDefault();
@@ -711,6 +735,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     // Modal handlers (hanya untuk Admin & Originator)
     document.addEventListener('click', function(e){
         <?php if ($isAdmin): ?>
+        // Modal Secure Document (hanya Admin)
         if (e.target.closest('.sec-file')) {
             const el = e.target.closest('.sec-file');
             document.querySelector('#myModal2 #drf').value = el.getAttribute('data-id') || '';
@@ -719,15 +744,22 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         }
         <?php endif; ?>
         
-        // Modal Upload Evidence (Admin & Originator only)
+        // Modal Upload Evidence (Admin & Originator)
         if (e.target.closest('.btn-upload-sos')) {
             e.preventDefault();
+            
+            // Reset form terlebih dahulu
             $('#modalSosialisasi').find('form')[0].reset();
+            
+            // Isi data baru
             const btn = e.target.closest('.btn-upload-sos');
             const drf = btn.getAttribute('data-drf');
             const nodoc = btn.getAttribute('data-nodoc');
+            
             document.getElementById('modal_upload_drf').value = drf;
             document.getElementById('modal_upload_nodoc').textContent = nodoc;
+            
+            // Show modal
             $('#modalSosialisasi').modal('show');
         }
     });
