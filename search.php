@@ -24,6 +24,85 @@ require_once('Connections/config.php');
 
 $state = $isLoggedIn && isset($_SESSION['state']) ? $_SESSION['state'] : '';
 $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
+
+// ===== FUZZY SEARCH HELPER FUNCTIONS =====
+/**
+ * Normalize string untuk pencarian fuzzy
+ * Menghapus karakter khusus, spasi berlebih, dan lowercase
+ */
+function normalizeString($str) {
+    $str = strtolower(trim($str));
+    // Hapus karakter non-alfanumerik kecuali dash dan underscore
+    $str = preg_replace('/[^a-z0-9\-_]/', '', $str);
+    return $str;
+}
+
+/**
+ * Generate pattern pencarian fuzzy untuk LIKE query
+ * Contoh: "o-w-ffd1_jk-1" -> "%o%w%ffd1%jk%1%"
+ */
+function generateFuzzyPattern($keyword) {
+    $normalized = normalizeString($keyword);
+    if (empty($normalized)) return '';
+    
+    // Split by dash dan underscore, lalu join dengan wildcard
+    $parts = preg_split('/[\-_]+/', $normalized);
+    $parts = array_filter($parts); // Remove empty
+    
+    if (empty($parts)) return '%' . $normalized . '%';
+    
+    return '%' . implode('%', $parts) . '%';
+}
+
+/**
+ * Generate multiple search patterns untuk meningkatkan akurasi
+ */
+function generateSearchPatterns($keyword) {
+    $patterns = [];
+    $normalized = normalizeString($keyword);
+    
+    // Pattern 1: Exact dengan wildcard di awal dan akhir
+    $patterns[] = '%' . mysqli_real_escape_string($GLOBALS['link'], $keyword) . '%';
+    
+    // Pattern 2: Normalized exact
+    $patterns[] = '%' . mysqli_real_escape_string($GLOBALS['link'], $normalized) . '%';
+    
+    // Pattern 3: Fuzzy pattern (split by separator)
+    $fuzzy = generateFuzzyPattern($keyword);
+    if (!in_array($fuzzy, $patterns)) {
+        $patterns[] = mysqli_real_escape_string($GLOBALS['link'], $fuzzy);
+    }
+    
+    // Pattern 4: Each character separated by wildcard (untuk typo berat)
+    if (strlen($normalized) >= 3 && strlen($normalized) <= 15) {
+        $chars = str_split($normalized);
+        $charPattern = '%' . implode('%', $chars) . '%';
+        $patterns[] = mysqli_real_escape_string($GLOBALS['link'], $charPattern);
+    }
+    
+    return array_unique($patterns);
+}
+
+/**
+ * Build WHERE clause untuk fuzzy search pada field tertentu
+ */
+function buildFuzzyWhereClause($field, $keyword, $link) {
+    if (empty(trim($keyword))) return '';
+    
+    $patterns = generateSearchPatterns($keyword);
+    $conditions = [];
+    
+    foreach ($patterns as $pattern) {
+        // Search pada field asli
+        $conditions[] = "($field LIKE '$pattern')";
+        
+        // Search pada normalized field (lowercase, no special chars)
+        $conditions[] = "(LOWER(REPLACE(REPLACE(REPLACE($field, '-', ''), '_', ''), ' ', '')) LIKE '" . 
+                       str_replace(['%', '_'], ['%%', '__'], strtolower(str_replace(['%', '-', '_', ' '], '', $pattern))) . "')";
+    }
+    
+    return '(' . implode(' OR ', $conditions) . ')';
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -101,6 +180,11 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
             border-radius: 3px;
             margin: 1px;
         }
+        .fuzzy-hint {
+            font-size: 11px;
+            color: #28a745;
+            margin-top: 4px;
+        }
         
         @media(max-width:767px){
             body { padding-top: 150px; }
@@ -111,10 +195,10 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
 
     <script>
     $(document).ready(function() {
-        $('input[name="doc_no"]').on('input', function() {
-            this.value = this.value.replace(/ /g, '-');
-        });
-
+        // REMOVED: Auto-replace space with dash untuk No. Document
+        // Biarkan user mengetik dengan natural, sistem akan handle fuzzy search
+        
+        // Sanitasi untuk DRF: hanya izinkan angka
         $('input[name="drf"]').on('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
@@ -146,7 +230,10 @@ $user_id = $isLoggedIn && isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label class="control-label">No Document</label>
-                        <input type="text" id="doc_no_input" name="doc_no" class="form-control" value="<?php echo htmlspecialchars($_GET['doc_no'] ?? ''); ?>" placeholder="e.g DC-001">
+                        <input type="text" id="doc_no_input" name="doc_no" class="form-control" value="<?php echo htmlspecialchars($_GET['doc_no'] ?? ''); ?>" placeholder="e.g DC-001 atau DC 001 atau dc001">
+                        <div class="fuzzy-hint">
+                            <i class="glyphicon glyphicon-info-sign"></i> Sistem akan mencari dokumen meskipun ada typo atau format berbeda
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -279,7 +366,8 @@ function build_hybrid_file_path($row) {
 
 // Processing search
 if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) || isset($_GET['sort']) || isset($_GET['drf'])) {
-    $doc_no = isset($_GET['doc_no']) ? mysqli_real_escape_string($link, trim($_GET['doc_no'])) : '';
+    // Sanitize input dengan FUZZY SEARCH support
+    $doc_no_raw = isset($_GET['doc_no']) ? trim($_GET['doc_no']) : '';
     $title  = isset($_GET['title']) ? mysqli_real_escape_string($link, trim($_GET['title'])) : '';
     $empid  = isset($_GET['empid']) ? mysqli_real_escape_string($link, trim($_GET['empid'])) : '';
     $doc_type = isset($_GET['doc_type']) ? mysqli_real_escape_string($link, trim($_GET['doc_type'])) : '';
@@ -293,9 +381,15 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     $drf_search = isset($_GET['drf']) ? mysqli_real_escape_string($link, trim($_GET['drf'])) : '';
 
     $whereParts = [];
-    if ($doc_no !== '') {
-        $whereParts[] = "(no_doc LIKE '%$doc_no%')";
+    
+    // ===== FUZZY SEARCH untuk No Document =====
+    if ($doc_no_raw !== '') {
+        $fuzzyWhere = buildFuzzyWhereClause('no_doc', $doc_no_raw, $link);
+        if (!empty($fuzzyWhere)) {
+            $whereParts[] = $fuzzyWhere;
+        }
     }
+    
     if ($title !== '') {
         $whereParts[] = "(title LIKE '%$title%')";
     }
@@ -331,6 +425,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         mysqli_free_result($countRes);
     }
 
+    // Main query with sorting
     $orderDir = ($sort === 'oldest') ? 'ASC' : 'DESC';
     $sql = "SELECT * FROM docu $where ORDER BY no_drf $orderDir";
     if (!$isAll) $sql .= " LIMIT $offset,$perPage";
@@ -350,6 +445,9 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         echo '<div class="container">';
         echo '<div style="margin-bottom: 18px; padding: 0 15px;">';
         echo '<span class="badge-info-custom">Results</span> Menampilkan <strong>'.$startRow.'</strong> - <strong>'.$endRow.'</strong> dari <strong>'.$totalRows.'</strong>';
+        if (!empty($doc_no_raw)) {
+            echo ' <small class="muted-small">(Pencarian fuzzy untuk: "'.htmlspecialchars($doc_no_raw).'")</small>';
+        }
         echo ' &nbsp; <small class="muted-small">Sort: '.htmlspecialchars(($sort==='oldest'?'Oldest first':'Newest first')).'</small>';
         echo '</div>';
         echo '</div>';
@@ -380,7 +478,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     <?php if ($isAdmin): ?>
                     <th>Action</th>
                     <?php endif; ?>
-                    <?php if ($isLoggedIn): ?>
+                    <?php if ($isLoggedIn): /* ✅ Kolom Evidence tampil untuk SEMUA user yang login */ ?>
                     <th>Evidence</th>
                     <?php endif; ?>
                 </tr>
@@ -408,7 +506,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     echo '<td>'. htmlspecialchars($row['section']) .'</td>';
                     echo '<td>'. htmlspecialchars($row['device']) .'</td>';
                     
-                    // DETAIL COLUMN
+                    // ===== DETAIL COLUMN (UNTUK SEMUA USER) =====
                     echo '<td style="white-space:nowrap;">';
                     echo '<a class="btn btn-xs btn-info" title="Lihat Detail" href="detail.php?drf='.urlencode($row['no_drf']).'&no_doc='.urlencode($row['no_doc']).'">
                             <span class="glyphicon glyphicon-search"></span>
@@ -421,7 +519,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                           </a>';
                     echo '</td>';
                     
-                    // ACTION COLUMN (ADMIN ONLY)
+                    // ===== ACTION COLUMN (HANYA ADMIN) =====
                     if ($isAdmin) {
                         echo '<td style="white-space:nowrap;">';
                         
@@ -452,16 +550,19 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                         echo '</td>';
                     }
                     
-                    // EVIDENCE COLUMN
+                    // ===== EVIDENCE COLUMN (SEMUA USER YANG LOGIN) =====
                     if ($isLoggedIn) { 
                         echo '<td style="white-space:nowrap;">';
                         
                         if ($has_sos) {
+                            // ✅ Jika SUDAH ada file: Semua user yang login bisa "Lihat"
                             echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">
                                     <span class="glyphicon glyphicon-file"></span> Lihat
                                   </a>';
                         } else {
+                            // ✅ Jika BELUM ada file:
                             if ($isAdmin || $isOriginator) {
+                                // Admin & Originator: Tampilkan tombol "Upload"
                                 echo '<button type="button"
                                         class="btn btn-xs btn-success btn-upload-sos"
                                         data-drf="'.htmlspecialchars($row['no_drf']).'"
@@ -470,6 +571,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                                         <span class="glyphicon glyphicon-upload"></span> Upload
                                       </button>';
                             } else {
+                                // Approver & PIC: Tampilkan pesan "Belum ada"
                                 echo '<span class="text-muted" style="font-size:11px;">Belum ada</span>';
                             }
                         }
@@ -515,10 +617,10 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </div>
 <?php endif; ?>
 
-<?php } ?>
+<?php } // end processing ?>
 
 <?php if ($isAdmin): ?>
-<!-- MODAL SECURE DOCUMENT -->
+<!-- ===== MODAL SECURE DOCUMENT (HANYA ADMIN) ===== -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -546,8 +648,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
 </div>
 <?php endif; ?>
 
-<?php if ($isAdmin || $isOriginator): ?>
-<!-- MODAL UPLOAD EVIDENCE -->
+<?php if ($isAdmin || $isOriginator): /* ✅ Modal HANYA untuk Admin & Originator */ ?>
+<!-- ===== MODAL UPLOAD EVIDENCE (ADMIN & ORIGINATOR ONLY) ===== -->
 <div class="modal fade" id="modalSosialisasi" tabindex="-1" role="dialog" aria-labelledby="modalSosLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -560,6 +662,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     <p>Upload Evidence untuk No. Document: <strong id="modal_upload_nodoc"></strong></p>
                     <input type="hidden" name="drf" id="modal_upload_drf" value="">
                     <?php
+                    // CSRF token
                     if (empty($_SESSION['csrf_token'])) {
                         if (function_exists('random_bytes')) {
                             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -579,7 +682,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal"><button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                     <button type="submit" name="upload_evidence" class="btn btn-success">Upload</button>
                 </div>
             </form>
@@ -628,11 +731,11 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         });
     }
 
-    <?php if ($isAdmin || $isOriginator): ?>
-    // Modal handlers
+    <?php if ($isAdmin || $isOriginator): /* ✅ Modal handlers HANYA untuk Admin & Originator */ ?>
+    // Modal handlers (hanya untuk Admin & Originator)
     document.addEventListener('click', function(e){
         <?php if ($isAdmin): ?>
-        // Modal Secure Document
+        // Modal Secure Document (hanya Admin)
         if (e.target.closest('.sec-file')) {
             const el = e.target.closest('.sec-file');
             document.querySelector('#myModal2 #drf').value = el.getAttribute('data-id') || '';
@@ -641,14 +744,14 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
         }
         <?php endif; ?>
         
-        // Modal Upload Evidence
+        // Modal Upload Evidence (Admin & Originator)
         if (e.target.closest('.btn-upload-sos')) {
             e.preventDefault();
             
-            // Reset form
+            // Reset form terlebih dahulu
             $('#modalSosialisasi').find('form')[0].reset();
             
-            // Set data
+            // Isi data baru
             const btn = e.target.closest('.btn-upload-sos');
             const drf = btn.getAttribute('data-drf');
             const nodoc = btn.getAttribute('data-nodoc');
