@@ -231,9 +231,7 @@ function buildFuzzyWhereClause($field, $keyword, $link) {
                     <div class="form-group">
                         <label class="control-label">No Document</label>
                         <input type="text" id="doc_no_input" name="doc_no" class="form-control" value="<?php echo htmlspecialchars($_GET['doc_no'] ?? ''); ?>" placeholder="e.g DC-001 atau DC 001 atau dc001">
-                        <div class="fuzzy-hint">
-                            <i class="glyphicon glyphicon-info-sign"></i> Sistem akan mencari dokumen meskipun ada typo atau format berbeda
-                        </div>
+
                     </div>
 
                     <div class="form-group">

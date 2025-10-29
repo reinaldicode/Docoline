@@ -16,6 +16,13 @@ require_once('Connections/config.php');
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <style>
     /* ===== UI ===== */
+    body {
+      background-image: url("images/white.jpeg");
+      background-color: #cccccc;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      padding-top: 120px;
+    }
     .search-card {
       background: #fff;
       border-radius: 12px;
@@ -50,9 +57,30 @@ require_once('Connections/config.php');
       top: 0;
       z-index: 2;
     }
+    .table-modern thead th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .table-modern tbody td {
+      border: 1px solid #ddd;
+      padding: 6px 8px;
+      font-size: 13px;
+      vertical-align: middle;
+      background: transparent;
+    }
     .table-modern tbody tr:hover { background: rgba(0,0,0,0.03); }
+    .btn-xs {
+      padding: 2px 6px;
+      font-size: 11px;
+      line-height: 1.5;
+      border-radius: 3px;
+      margin: 1px;
+    }
 
     @media(max-width:767px){
+      body { padding-top: 150px; }
       .search-card { padding:12px; }
       .controls .btn { margin-bottom:8px; }
     }
@@ -178,6 +206,21 @@ require_once('Connections/config.php');
 </div>
 
 <?php
+// ===== 🔥 HELPER FUNCTION: BUILD FILE PATH (HYBRID) =====
+function build_hybrid_file_path($row) {
+    $drf = intval($row['no_drf']);
+    $doc_type = $row['doc_type'];
+    $filename = $row['file'];
+    
+    // Legacy files (DRF ≤ 12955): Type/file.pdf
+    if ($drf <= 12955) {
+        return htmlspecialchars($doc_type . '/' . $filename);
+    }
+    
+    // New files (DRF > 12955): documents/Type/file.pdf
+    return htmlspecialchars('documents/' . $doc_type . '/' . $filename);
+}
+
 if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) || isset($_GET['sort'])) {
   // Sanitasi untuk No Document: replace spasi dengan strip
   $doc_no_raw = trim($_GET['doc_no'] ?? '');
@@ -283,9 +326,8 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
               echo '<td>'.htmlspecialchars($row['no_rev']).'</td>';
               echo '<td>'.htmlspecialchars($row['no_drf']).'</td>';
               
-              // File path logic
-              $tempat = (isset($row['no_drf']) && intval($row['no_drf']) > 12955) ? $row['doc_type'] : 'document';
-              $filePath = htmlspecialchars($tempat . '/' . $row['file']);
+              // ===== 🔥 GUNAKAN HYBRID PATH =====
+              $filePath = build_hybrid_file_path($row);
               
               echo '<td><a href="'.$filePath.'" target="_blank">'.htmlspecialchars($row['title']).'</a></td>';
               echo '<td>'.htmlspecialchars($row['status']).'</td>';
@@ -293,16 +335,28 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
               echo '<td>'.htmlspecialchars($row['section']).'</td>';
               echo '<td>'.htmlspecialchars($row['device']).'</td>';
               echo '<td>'.htmlspecialchars($row['process']).'</td>';
-              echo '<td style="white-space:nowrap;">
-                    <a class="btn btn-xs btn-info" title="Lihat Detail" href="detail.php?drf='.urlencode($row['no_drf']).'&no_doc='.urlencode($row['no_doc']).'&public=1">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </a>
-                    <a class="btn btn-xs btn-info" title="Lihat RADF" href="radf.php?drf='.urlencode($row['no_drf']).'">
-                        <span class="glyphicon glyphicon-eye-open"></span>
-                    </a>
-                    </td>';
               
-              // Kolom Sosialisasi
+              // ===== KOLOM ACTION (DETAIL, RADF, APPROVER) =====
+              echo '<td style="white-space:nowrap;">';
+              
+              // 1. Button Lihat Detail
+              echo '<a class="btn btn-xs btn-info" title="Lihat Detail" href="detail.php?drf='.urlencode($row['no_drf']).'&no_doc='.urlencode($row['no_doc']).'&public=1">
+                      <span class="glyphicon glyphicon-search"></span>
+                    </a>';
+              
+              // 2. Button Lihat RADF
+              echo '<a class="btn btn-xs btn-info" title="Lihat RADF" href="radf.php?drf='.urlencode($row['no_drf']).'&section='.urlencode($row['section']).'">
+                      <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>';
+              
+              // 3. Button Lihat Approver (✅ YANG HILANG INI!)
+              echo '<a class="btn btn-xs btn-info" title="Lihat Approver" href="lihat_approver.php?drf='.urlencode($row['no_drf']).'">
+                      <span class="glyphicon glyphicon-user"></span>
+                    </a>';
+              
+              echo '</td>';
+              
+              // ===== KOLOM EVIDENCE =====
               echo '<td>';
               if ($has_sos) {
                   echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">';
@@ -325,6 +379,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
     </div>
 
     <?php
+      // Pagination
       if (!$isAll) {
         $totalPages = ceil($totalRows / $perPage);
         if ($totalPages > 1) {

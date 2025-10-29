@@ -143,14 +143,6 @@ if (is_array($types)) {
                     echo '<span class="label label-warning" style="font-size:9px;">Legacy</span> ';
                 }
                 
-                // Auto-filter badge
-                $subNameLower = strtolower($sub['name']);
-                if (strpos($subNameLower, 'production') !== false) {
-                    echo '<span class="label label-success" style="font-size:9px;">Auto: Production</span> ';
-                } elseif (strpos($subNameLower, 'other') !== false) {
-                    echo '<span class="label label-info" style="font-size:9px;">Auto: Other</span> ';
-                }
-                
                 // Action buttons (INLINE & COMPACT)
                 echo "<div style='margin-top:4px;'>";
                 echo "<a href='edit_submenu.php?idx=" . intval($idx) . "&subidx=" . intval($subIdx) . "' class='btn btn-xs btn-primary' title='Edit Submenu' style='margin-right:3px;'>
