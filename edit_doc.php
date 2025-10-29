@@ -225,6 +225,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'save') {
     
     $drf_post = (int)$_POST['drf'];
 
+    // No. Document dan No. Revision akan menggunakan nilai dari database (tidak diedit)
     $nodoc = mysqli_real_escape_string($link, $_POST['nodoc']);
     $norev = mysqli_real_escape_string($link, $_POST['norev']);
     $revto = mysqli_real_escape_string($link, $_POST['revto']);
@@ -316,7 +317,7 @@ while($data = mysqli_fetch_array($res))
 <h2>Edit Document</h2>
 
 <div class="alert alert-warning" style="font-size: 11px;">
-    <strong>DEBUG INFO (DRF: <?php echo $drf; ?>):</strong><br/>
+    <strong>INFO DOCUMENT (DRF: <?php echo $drf; ?>):</strong><br/>
     <table class="table table-condensed table-bordered" style="margin-top: 10px;">
         <tr style="background: #f5f5f5;">
             <th>ID</th>
@@ -373,12 +374,18 @@ while($data = mysqli_fetch_array($res))
         <tr>
             <td>No. Document</td>
             <td>:</td>
-            <td><input type="text" class="form-control" name="nodoc" value="<?php echo htmlspecialchars($data['no_doc']); ?>"></td>
+            <td>
+                <input type="text" class="form-control" name="nodoc" value="<?php echo htmlspecialchars($data['no_doc']); ?>" readonly style="background-color: #e9ecef; cursor: not-allowed;">
+                <small class="text-muted"><i class="glyphicon glyphicon-lock"></i> Field ini tidak dapat diedit</small>
+            </td>
         </tr>
         <tr>
             <td>No. Revision</td>
             <td>:</td>
-            <td><input type="text" class="form-control" name="norev" value="<?php echo htmlspecialchars($data['no_rev']); ?>"></td>
+            <td>
+                <input type="text" class="form-control" name="norev" value="<?php echo htmlspecialchars($data['no_rev']); ?>" readonly style="background-color: #e9ecef; cursor: not-allowed;">
+                <small class="text-muted"><i class="glyphicon glyphicon-lock"></i> Field ini tidak dapat diedit</small>
+            </td>
         </tr>
         <tr>
             <td>Review To</td>
