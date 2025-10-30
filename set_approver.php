@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 include('koneksi.php');
-session_start();
+// session_start();
 
 // Enable error reporting for debugging
 error_reporting(E_ALL);
@@ -69,7 +69,7 @@ if (isset($_GET['debug']) && $_GET['debug'] == '1') {
                 </thead>
                 <tbody>
                 <?php 
-                if (!empty($section)) {
+                if (!empty($section) && $section != '-') {
                     // ✅ QUERY BERDASARKAN id_section (yang sudah normalized)
                     // Karena struktur tabel section:
                     // - id_section = "Accounting" (normalized)
