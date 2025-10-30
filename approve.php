@@ -143,16 +143,48 @@ if (isset($_POST['approve'])) {
         </script>
         <?php
     } else {
-        // Masih ada approver yang belum approve
-        // Update status dokumen menjadi Review (masih dalam proses)
-        $perintah_review = "UPDATE docu 
-                            SET status = 'Review' 
-                            WHERE no_drf = '$drf'";
-        mysqli_query($link, $perintah_review);
+        // Dokumen belum disetujui sepenuhnya.
+        
+        // -- LOGIKA BARU: Cek sisa approver --
+        // Hitung approver yang statusnya MASIH 'Review' (belum suspend/approve)
+        $sql_check = "SELECT COUNT(*) as sisa_review 
+                      FROM rev_doc 
+                      WHERE id_doc = '$drf' AND status = 'Review'";
+        $res_check = mysqli_query($link, $sql_check);
+        $row_check = mysqli_fetch_assoc($res_check);
+        $sisa_review = $row_check['sisa_review'];
+
+        $alert_message = "Your approval has been recorded.\\n\\n";
+        
+        // sisa_review == 0 berarti semua sudah action (approve/suspend)
+        // Ubah status dokumen utama ke 'Pending' agar originator bisa edit
+        if ($sisa_review == 0) {
+            $perintah_status = "UPDATE docu 
+                                SET status = 'Pending' 
+                                WHERE no_drf = '$drf'";
+            
+            $alert_message .= "All other approvers have finished.\\nDocument is set to 'Pending' for revision.";
+            
+            // Hitung approver yang pending untuk pesan alert
+            $sisa_pending = $jumlah_drf - $jumlah_approved; 
+            if ($sisa_pending > 0) {
+                 $alert_message .= "\\nWaiting for " . $sisa_pending . " approver(s) who suspended.";
+            }
+
+        } else {
+            // Jika masih ada sisa_review > 0, biarkan 'Review'
+            $perintah_status = "UPDATE docu 
+                                SET status = 'Review' 
+                                WHERE no_drf = '$drf'";
+                                
+            $alert_message .= "Waiting for " . $sisa_review . " other approver(s).";
+        }
+        
+        mysqli_query($link, $perintah_status) or die("Error updating docu status: " . mysqli_error($link));
         
         ?>
         <script language='javascript'>
-            alert('Your approval has been recorded.\n\nWaiting for other approvers (<?php echo ($jumlah_drf - $jumlah_approved); ?> remaining).');
+            alert('<?php echo $alert_message; ?>');
             document.location='my_doc.php?tipe=<?php echo urlencode($tipe); ?>&submit=Show';
         </script>
         <?php

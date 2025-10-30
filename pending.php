@@ -81,11 +81,25 @@ if (isset($_POST['submit'])) {
     
     mysqli_query($link, $sql) or die("Error updating rev_doc: " . mysqli_error($link));
     
-    // Update status dokumen utama menjadi Pending
-    $perintah1 = "UPDATE docu 
-                  SET status = 'Pending' 
-                  WHERE no_drf = '$drf'";
-    mysqli_query($link, $perintah1) or die("Error updating docu: " . mysqli_error($link));
+    // -- LOGIKA BARU: Cek sisa approver --
+    // Hitung approver yang statusnya MASIH 'Review' (belum suspend/approve)
+    $sql_check = "SELECT COUNT(*) as sisa_review 
+                  FROM rev_doc 
+                  WHERE id_doc = '$drf' AND status = 'Review'";
+    $res_check = mysqli_query($link, $sql_check);
+    $row_check = mysqli_fetch_assoc($res_check);
+    $sisa_review = $row_check['sisa_review'];
+
+    // HANYA update status dokumen utama ke 'Pending' JIKA
+    // sudah TIDAK ADA lagi approver yang tersisa untuk mereview.
+    if ($sisa_review == 0) {
+        $perintah1 = "UPDATE docu 
+                      SET status = 'Pending' 
+                      WHERE no_drf = '$drf'";
+        mysqli_query($link, $perintah1) or die("Error updating docu: " . mysqli_error($link));
+    }
+    // Jika $sisa_review > 0, biarkan docu.status tetap 'Review'
+    // agar approver lain bisa melihatnya.
 
     // Kirim email notifikasi
     require_once("class.smtp.php");

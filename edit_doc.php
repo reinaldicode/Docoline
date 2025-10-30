@@ -35,6 +35,25 @@ if (isset($_POST['update_status']) && $_POST['update_status'] == '1' && isset($_
     }
     
     // ========== STEP 1: CEK DATA SEBELUM UPDATE ==========
+    
+    // --- PERUBAHAN BARU: Cek status docu saat ini ---
+    $check_doc_status = "SELECT status, doc_type FROM docu WHERE no_drf=$drf_update";
+    $res_doc_status = mysqli_query($link, $check_doc_status);
+    $doc_data_status = mysqli_fetch_assoc($res_doc_status);
+    $current_status = $doc_data_status ? $doc_data_status['status'] : '';
+    $redirect_type = $doc_data_status ? $doc_data_status['doc_type'] : '';
+
+    // Jika status sudah 'Approved', jangan lakukan apa-apa, langsung redirect
+    if ($current_status == 'Approved') {
+        echo "<script>
+                alert('Info RADF berhasil diubah.\\nStatus dokumen tetap Approved.');
+                document.location='my_doc.php?tipe=" . urlencode($redirect_type) . "&submit=Show';
+              </script>";
+        exit; // Selesai
+    }
+    // --- AKHIR PERUBAHAN ---
+
+    // Jika status BUKAN 'Approved', lanjutkan logika lama
     $check_before = "SELECT id, nrp, status, tgl_approve, reason FROM rev_doc WHERE id_doc=$drf_update";
     $res_before = mysqli_query($link, $check_before);
     

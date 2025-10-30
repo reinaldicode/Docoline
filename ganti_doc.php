@@ -43,7 +43,6 @@ if (isset($_POST['upload'])) {
         $tmp_file_master = $_FILES['masterbaru']['tmp_name'];
         $nma_file_master = basename($_FILES['masterbaru']['name']);
         
-
         $target_dir_master = 'master/' . rtrim($safe_type, '/') . '/';
         
         if (!is_dir($target_dir_master)) {
@@ -55,116 +54,135 @@ if (isset($_POST['upload'])) {
         }
     }
 
-    // Update status menjadi Review setelah upload file baru
-    $new_status = 'Review';
-
+    // --- PERUBAHAN BARU: Cek status dokumen saat ini ---
+    $sql_status_check = "SELECT status FROM docu WHERE no_drf = $drf";
+    $res_status_check = mysqli_query($link, $sql_status_check);
+    $doc_data_check = mysqli_fetch_assoc($res_status_check);
+    $current_status = $doc_data_check ? $doc_data_check['status'] : '';
+    
+    $is_already_approved = ($current_status == 'Approved');
+    
     // --- Update Database Dokumen ---
-    $query_update_docu = "UPDATE docu SET status='$new_status'";
+    $query_update_docu = "UPDATE docu SET ";
+    
+    // HANYA ubah status jika BELUM 'Approved'
+    if (!$is_already_approved) {
+        $query_update_docu .= "status='Review', ";
+    }
+    
+    // Tambahkan file-file baru ke query
     if (!empty($nma_file)) {
-        $query_update_docu .= ", file='" . mysqli_real_escape_string($link, $nma_file) . "'";
+        $query_update_docu .= "file='" . mysqli_real_escape_string($link, $nma_file) . "', ";
     }
-    // Ikuti pola upload.php - simpan master ke file_asli, BUKAN file_master
     if (!empty($nma_file_master)) {
-        $query_update_docu .= ", file_asli='" . mysqli_real_escape_string($link, $nma_file_master) . "'";
+        // Ikuti pola upload.php - simpan master ke file_asli
+        $query_update_docu .= "file_asli='" . mysqli_real_escape_string($link, $nma_file_master) . "', ";
     }
+    
+    // Hapus koma dan spasi terakhir
+    $query_update_docu = rtrim($query_update_docu, ', '); 
     $query_update_docu .= " WHERE no_drf=$drf";
+    
     mysqli_query($link, $query_update_docu) or die("Error updating docu: " . mysqli_error($link));
 
-    // ============================================================================
-    // PERUBAHAN UTAMA: HANYA RESET APPROVER YANG STATUS-NYA 'Pending' (yang suspend)
-    // Approver yang sudah 'Approved' TIDAK di-reset!
-    // ============================================================================
-    // GANTI LINE 74-80 jadi:
-    $query_reset_rev = "UPDATE rev_doc 
-                    SET status='Review', reason='' 
-                    WHERE id_doc=$drf AND status='Pending'";
-    mysqli_query($link, $query_reset_rev) or die("Error resetting pending approvers: " . mysqli_error($link));
-
-    // Ambil approver yang perlu direview ulang (yang statusnya Pending sebelumnya)
-    $sql_pending_approvers = "SELECT DISTINCT u.name, u.email 
-                              FROM rev_doc rd
-                              JOIN users u ON u.username = rd.nrp 
-                              WHERE rd.id_doc = $drf AND rd.status='Review'";
-    
-    $res_pending = mysqli_query($link, $sql_pending_approvers);
-    
-    $approvers_to_notify = [];
-    if ($res_pending && mysqli_num_rows($res_pending) > 0) {
-        while ($data = mysqli_fetch_assoc($res_pending)) {
-            $approvers_to_notify[] = $data;
-        }
-    }
-
-    // Cek berapa approver yang masih Approved (tidak perlu review lagi)
-    $sql_still_approved = "SELECT COUNT(*) as approved_count 
-                           FROM rev_doc 
-                           WHERE id_doc=$drf AND status='Approved'";
-    $res_approved = mysqli_query($link, $sql_still_approved);
-    $row_approved = mysqli_fetch_assoc($res_approved);
-    $approved_count = $row_approved['approved_count'];
-
-    // Kirim Email Notifikasi ke approver yang perlu review ulang
-    if (count($approvers_to_notify) > 0) {
-        require 'PHPMailer/PHPMailerAutoload.php';
-        $mail = new PHPMailer();
+    // --- LOGIKA BERSYARAT ---
+    // Jika status BUKAN 'Approved', lanjutkan logika reset approver & kirim email
+    if (!$is_already_approved) {
         
-        try {
-            $mail->IsSMTP();
-            include 'smtp.php';
-            
-            $mail->From = 'dc_admin@ssi.sharp-world.com';
-            $mail->FromName = 'Admin Document Online System';
+        // Reset HANYA approver yang 'Pending'
+        $query_reset_rev = "UPDATE rev_doc 
+                        SET status='Review', reason='' 
+                        WHERE id_doc=$drf AND status='Pending'";
+        mysqli_query($link, $query_reset_rev) or die("Error resetting pending approvers: " . mysqli_error($link));
 
-            foreach ($approvers_to_notify as $recipient) {
-                $mail->addAddress($recipient['email'], $recipient['name']);
+        // Ambil approver yang perlu direview ulang (yang statusnya Pending sebelumnya)
+        $sql_pending_approvers = "SELECT DISTINCT u.name, u.email 
+                                  FROM rev_doc rd
+                                  JOIN users u ON u.username = rd.nrp 
+                                  WHERE rd.id_doc = $drf AND rd.status='Review'";
+        
+        $res_pending = mysqli_query($link, $sql_pending_approvers);
+        
+        $approvers_to_notify = [];
+        if ($res_pending && mysqli_num_rows($res_pending) > 0) {
+            while ($data = mysqli_fetch_assoc($res_pending)) {
+                $approvers_to_notify[] = $data;
             }
-            
-            $mail->IsHTML(true);
-            $mail->Subject = "Re-Review Required for Revised Document: " . $nodoc;
-            $mail->Body = "Attention Mr./Mrs. Reviewer,<br/><br/>" .
-                          "The following document has been revised by the originator and requires your re-review:".
-                          "<br/><br/><b>No. Document:</b> " . htmlspecialchars($nodoc) .
-                          "<br/><b>Title:</b> " . htmlspecialchars($title) .
-                          "<br/><br/><b>Note:</b> You previously suspended this document. Please review the revised version." .
-                          ($approved_count > 0 ? "<br/><b>Good News:</b> $approved_count approver(s) who already approved do NOT need to approve again!" : "") .
-                          "<br/><br/>Please login into <a href='http://192.168.132.15/document'>Document Online System</a>. Thank You.";
+        }
 
-            if ($mail->send()) {
-                $message = "File changed successfully!\\n\\n";
-                $message .= "✓ Notified " . count($approvers_to_notify) . " approver(s) who need to re-review\\n";
-                if ($approved_count > 0) {
-                    $message .= "✓ $approved_count approver(s) who already approved do NOT need to approve again\\n";
-                }
-                $message .= "\\nStatus changed to Review.";
+        // Cek berapa approver yang masih Approved
+        $sql_still_approved = "SELECT COUNT(*) as approved_count 
+                               FROM rev_doc 
+                               WHERE id_doc=$drf AND status='Approved'";
+        $res_approved = mysqli_query($link, $sql_still_approved);
+        $row_approved = mysqli_fetch_assoc($res_approved);
+        $approved_count = $row_approved['approved_count'];
+
+        // Kirim Email Notifikasi ke approver yang perlu review ulang
+        if (count($approvers_to_notify) > 0) {
+            require 'PHPMailer/PHPMailerAutoload.php';
+            $mail = new PHPMailer();
+            
+            try {
+                $mail->IsSMTP();
+                include 'smtp.php';
                 
+                $mail->From = 'dc_admin@ssi.sharp-world.com';
+                $mail->FromName = 'Admin Document Online System';
+
+                foreach ($approvers_to_notify as $recipient) {
+                    $mail->addAddress($recipient['email'], $recipient['name']);
+                }
+                
+                $mail->IsHTML(true);
+                $mail->Subject = "Re-Review Required for Revised Document: " . $nodoc;
+                $mail->Body = "Attention Mr./Mrs. Reviewer,<br/><br/>" .
+                              "The following document has been revised and requires your re-review:".
+                              "<br/><br/><b>No. Document:</b> " . htmlspecialchars($nodoc) .
+                              "<br/><b>Title:</b> " . htmlspecialchars($title) .
+                              ($approved_count > 0 ? "<br/><b>Note:</b> $approved_count approver(s) who already approved do NOT need to approve again." : "") .
+                              "<br/><br/>Please login into <a href='http://192.168.132.15/document'>Document Online System</a>. Thank You.";
+
+                if ($mail->send()) {
+                    $message = "File changed successfully!\\n\\n";
+                    $message .= "✓ Notified " . count($approvers_to_notify) . " approver(s) who need to re-review\\n";
+                    $message .= "✓ $approved_count approver(s) do NOT need to approve again\\n";
+                    $message .= "\\nStatus changed to Review.";
+                    
+                    echo "<script>
+                            alert('$message');
+                            document.location='my_doc.php?tipe=" . urlencode($type) . "&submit=Show';
+                          </script>";
+                } else {
+                    echo "<script>
+                            alert('File changed successfully, but email failed to send!\\nError: ".addslashes($mail->ErrorInfo)."');
+                            document.location='my_doc.php?tipe=" . urlencode($type) . "&submit=Show';
+                          </script>";
+                }
+            } catch (Exception $e) {
                 echo "<script>
-                        alert('$message');
-                        document.location='my_doc.php?tipe=" . urlencode($type) . "&submit=Show';
-                      </script>";
-            } else {
-                echo "<script>
-                        alert('File changed successfully, but email failed to send!\\nError: ".addslashes($mail->ErrorInfo)."');
+                        alert('File changed, but an error occurred during email sending.\\nError: ".addslashes($e->getMessage())."');
                         document.location='my_doc.php?tipe=" . urlencode($type) . "&submit=Show';
                       </script>";
             }
-        } catch (Exception $e) {
+        } else {
+            // Tidak ada approver yang perlu review ulang
+            $message = "File changed successfully!\\n\\n";
+            $message .= "Status changed to Review (No pending approvers to reset).";
+            
             echo "<script>
-                    alert('File changed, but an error occurred during email sending.\\nError: ".addslashes($e->getMessage())."');
+                    alert('$message');
                     document.location='my_doc.php?tipe=" . urlencode($type) . "&submit=Show';
                   </script>";
         }
-    } else {
-        // Tidak ada approver yang perlu review ulang (semua sudah approved)
-        $message = "File changed successfully!\\n\\n";
-        if ($approved_count > 0) {
-            $message .= "All $approved_count approver(s) maintained their approval status.\\n";
-        }
-        $message .= "Status changed to Review.";
         
+    } else {
+        // Jika SUDAH 'Approved', kirim alert sukses dan redirect
         echo "<script>
-                alert('$message');
+                alert('File berhasil diubah.\\nStatus dokumen tetap Approved.');
                 document.location='my_doc.php?tipe=" . urlencode($type) . "&submit=Show';
               </script>";
+        exit;
     }
     
 } else {
