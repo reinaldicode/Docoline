@@ -667,8 +667,6 @@ if (isset($_GET['submit'])) {
     </div>
 <?php else: ?>
 
-<!-- BAGIAN TABEL - GANTI MULAI DARI BARIS 450an -->
-
 <div class="table-responsive">
     <table class="table table-hover">
         <thead style="background:#00FFFF;">
@@ -682,9 +680,8 @@ if (isset($_GET['submit'])) {
                 <th>Process</th>
                 <th>Section</th>
                 <th>Action</th>
-                <?php if ($isLoggedIn): /* ✅ Tampilkan untuk SEMUA user yang login */ ?>
+                <!-- ✅ TAMPILKAN KOLOM EVIDENCE UNTUK SEMUA USER (termasuk yang belum login) -->
                 <th>Evidence</th>
-                <?php endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -714,10 +711,10 @@ if (isset($_GET['submit'])) {
                 <td><?php echo htmlspecialchars($info['process']);?></td>
                 <td><?php echo htmlspecialchars($info['section']);?></td>
 
-                <!-- Action -->
+                <!-- ===== KOLOM ACTION ===== -->
                 <td style="white-space:nowrap;">
                     <!-- Tombol VIEW (tersedia untuk semua) -->
-                    <a href="detail.php?drf=<?php echo urlencode($info['no_drf']);?>&no_doc=<?php echo urlencode($info['no_doc']);?>" 
+                    <a href="detail.php?drf=<?php echo urlencode($info['no_drf']);?>&no_doc=<?php echo urlencode($info['no_doc']);?><?php echo $isLoggedIn ? '' : '&public=1'; ?>" 
                        class="btn btn-xs btn-info" title="lihat detail">
                         <span class="glyphicon glyphicon-search"></span>
                     </a>
@@ -763,33 +760,41 @@ if (isset($_GET['submit'])) {
                     ?>
                 </td>
 
-                <!-- ===== KOLOM EVIDENCE - SAMA SEPERTI SEARCH.PHP ✅ ===== -->
-                <?php if ($isLoggedIn): ?>
-                <td style="white-space:nowrap;">
+                <!-- ===== KOLOM EVIDENCE - UNTUK SEMUA USER (TERMASUK YANG BELUM LOGIN) ===== -->
+                <td style="text-align:center;">
+                    <?php
+                    // ✅ BUILD return_url untuk back button
+                    $currentPageUrl = $_SERVER['PHP_SELF'];
+                    if (!empty($_SERVER['QUERY_STRING'])) {
+                        $currentPageUrl .= '?' . $_SERVER['QUERY_STRING'];
+                    }
+                    $encodedReturnUrl = urlencode($currentPageUrl);
+                    ?>
+                    
                     <?php if ($has_sos): ?>
-                        <!-- Jika SUDAH ada file: Tombol "Lihat" (SEMUA USER) -->
-                        <a href="lihat_evidence.php?drf=<?php echo urlencode($info['no_drf']); ?>" 
+                        <!-- ✅ SUDAH ADA EVIDENCE: Button biru (SEMUA USER, termasuk yang belum login) -->
+                        <a href="lihat_evidence.php?drf=<?php echo urlencode($info['no_drf']); ?>&return_url=<?php echo $encodedReturnUrl; ?>" 
                            class="btn btn-xs btn-primary" title="Lihat Detail Evidence">
-                            <span class="glyphicon glyphicon-file"></span> Lihat
+                            <span class="glyphicon glyphicon-file"></span>
                         </a>
                     <?php else: ?>
-                        <!-- Jika BELUM ada file -->
-                        <?php if ($isAdmin || $isOriginator): ?>
-                            <!-- Admin & Originator: Tombol "Upload" -->
+                        <!-- ✅ BELUM ADA EVIDENCE -->
+                        <?php if ($isLoggedIn && ($isAdmin || $isOriginator)): ?>
+                            <!-- Admin & Originator (LOGGED IN): Button "Upload" -->
                             <button type="button"
                                 class="btn btn-xs btn-success btn-upload-sos"
                                 data-drf="<?php echo htmlspecialchars($info['no_drf']); ?>"
                                 data-nodoc="<?php echo htmlspecialchars($info['no_doc']); ?>"
+                                data-return-url="<?php echo htmlspecialchars($encodedReturnUrl); ?>"
                                 title="Upload Evidence">
                                 <span class="glyphicon glyphicon-upload"></span> Upload
                             </button>
                         <?php else: ?>
-                            <!-- Approver & PIC: Text "Belum ada" -->
-                            <span class="text-muted" style="font-size:11px;">Belum ada</span>
+                            <!-- BELUM LOGIN atau USER BIASA: Text "Belum ada" -->
+                            <span class="text-muted" style="font-size:11px; font-style:italic;">Belum ada</span>
                         <?php endif; ?>
                     <?php endif; ?>
                 </td>
-                <?php endif; ?>
             </tr>
         <?php
             $i++;

@@ -221,6 +221,22 @@ function build_hybrid_file_path($row) {
     return htmlspecialchars('documents/' . $doc_type . '/' . $filename);
 }
 
+// ===== 🔥 HELPER FUNCTION: BUILD CURRENT PAGE URL (untuk return_url) =====
+if (!function_exists('build_current_search_url')) {
+    function build_current_search_url() {
+        $params = $_GET;
+        return htmlspecialchars($_SERVER['PHP_SELF'] . '?' . http_build_query($params));
+    }
+}
+
+// ===== 🔥 HELPER FUNCTION: BUILD CURRENT PAGE URL =====
+function build_current_search_url() {
+    $params = $_GET;
+    // Hapus parameter 'page' jika ada
+    unset($params['page']);
+    return htmlspecialchars($_SERVER['PHP_SELF'] . '?' . http_build_query($params));
+}
+
 if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) || isset($_GET['sort'])) {
   // Sanitasi untuk No Document: replace spasi dengan strip
   $doc_no_raw = trim($_GET['doc_no'] ?? '');
@@ -312,9 +328,12 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
             <th>Evidence</th>
           </tr>
         </thead>
-        <tbody>
+      <tbody>
           <?php
             $i = $isAll ? 1 : $offset + 1;
+            // Get current search URL untuk back button
+            $currentSearchUrl = build_current_search_url();
+            
             while ($row = mysqli_fetch_assoc($res)) {
               // periksa apakah ada bukti sosialisasi
               $has_sos = !empty($row['sos_file']);
@@ -349,23 +368,33 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                       <span class="glyphicon glyphicon-eye-open"></span>
                     </a>';
               
-              // 3. Button Lihat Approver (✅ YANG HILANG INI!)
+              // 3. Button Lihat Approver
               echo '<a class="btn btn-xs btn-info" title="Lihat Approver" href="lihat_approver.php?drf='.urlencode($row['no_drf']).'">
                       <span class="glyphicon glyphicon-user"></span>
                     </a>';
               
               echo '</td>';
               
-              // ===== KOLOM EVIDENCE =====
-              echo '<td>';
+              // ===== KOLOM EVIDENCE (UPDATED: TAMPILAN LEBIH INFORMATIF) =====
+              echo '<td style="text-align:center;">';
+              
+              // ✅ BUILD return_url yang proper
+              $currentPageUrl = $_SERVER['PHP_SELF'];
+              if (!empty($_SERVER['QUERY_STRING'])) {
+                  $currentPageUrl .= '?' . $_SERVER['QUERY_STRING'];
+              }
+              
+              // Kirim return_url sebagai parameter agar bisa kembali ke halaman ini
+              $evidenceUrl = 'lihat_evidence.php?drf='.urlencode($row['no_drf']).'&return_url='.urlencode($currentPageUrl);
+              
               if ($has_sos) {
-                  echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">';
+                  // ✅ SUDAH ADA EVIDENCE: Tampilkan button biru
+                  echo '<a href="'.$evidenceUrl.'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">';
                   echo '<span class="glyphicon glyphicon-file"></span>';
                   echo '</a>';
               } else {
-                  echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-default" title="Belum ada evidence">';
-                  echo '<span class="glyphicon glyphicon-file"></span>';
-                  echo '</a>';
+                  // ✅ BELUM ADA EVIDENCE: Tampilkan text "Belum ada" (tidak ada button)
+                  echo '<span class="text-muted" style="font-size:11px; font-style:italic;">Belum ada</span>';
               }
               echo '</td>';
               
