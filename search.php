@@ -548,13 +548,20 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                         echo '</td>';
                     }
                     
-                    // ===== EVIDENCE COLUMN (SEMUA USER YANG LOGIN) =====
+                 // ===== EVIDENCE COLUMN (SEMUA USER YANG LOGIN) =====
                     if ($isLoggedIn) { 
                         echo '<td style="white-space:nowrap;">';
                         
+                        // ✅ BUILD return_url untuk back button
+                        $currentPageUrl = $_SERVER['PHP_SELF'];
+                        if (!empty($_SERVER['QUERY_STRING'])) {
+                            $currentPageUrl .= '?' . $_SERVER['QUERY_STRING'];
+                        }
+                        $encodedReturnUrl = urlencode($currentPageUrl);
+                        
                         if ($has_sos) {
                             // ✅ Jika SUDAH ada file: Semua user yang login bisa "Lihat"
-                            echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">
+                            echo '<a href="lihat_evidence.php?drf='.urlencode($row['no_drf']).'&return_url='.$encodedReturnUrl.'" class="btn btn-xs btn-primary" title="Lihat Detail Evidence">
                                     <span class="glyphicon glyphicon-file"></span> Lihat
                                   </a>';
                         } else {
@@ -565,6 +572,7 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
                                         class="btn btn-xs btn-success btn-upload-sos"
                                         data-drf="'.htmlspecialchars($row['no_drf']).'"
                                         data-nodoc="'.htmlspecialchars($row['no_doc']).'"
+                                        data-return-url="'.htmlspecialchars($encodedReturnUrl).'"
                                         title="Upload Evidence">
                                         <span class="glyphicon glyphicon-upload"></span> Upload
                                       </button>';
@@ -747,15 +755,27 @@ if (isset($_GET['submit']) || isset($_GET['perPage']) || isset($_GET['page']) ||
             e.preventDefault();
             
             // Reset form terlebih dahulu
-            $('#modalSosialisasi').find('form')[0].reset();
+            const form = $('#modalSosialisasi').find('form')[0];
+            form.reset();
             
             // Isi data baru
             const btn = e.target.closest('.btn-upload-sos');
             const drf = btn.getAttribute('data-drf');
             const nodoc = btn.getAttribute('data-nodoc');
+            const returnUrl = btn.getAttribute('data-return-url') || '';
             
             document.getElementById('modal_upload_drf').value = drf;
             document.getElementById('modal_upload_nodoc').textContent = nodoc;
+            
+            // ✅ TAMBAHKAN: Set return_url ke form
+            let returnUrlInput = form.querySelector('input[name="return_url"]');
+            if (!returnUrlInput) {
+                returnUrlInput = document.createElement('input');
+                returnUrlInput.type = 'hidden';
+                returnUrlInput.name = 'return_url';
+                form.appendChild(returnUrlInput);
+            }
+            returnUrlInput.value = decodeURIComponent(returnUrl);
             
             // Show modal
             $('#modalSosialisasi').modal('show');

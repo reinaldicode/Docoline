@@ -1,4 +1,5 @@
 <?php
+//header.php
 include 'session.php';
 extract($_REQUEST);
 ?>
@@ -66,6 +67,44 @@ $(document).ready(function () {
     });
 });
 </script>
+
+<!-- ✅ CUSTOM STYLE UNTUK ICON -->
+<style>
+/* Styling untuk icon di navbar */
+.navbar-nav > li > a {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-nav > li > a img {
+    display: block;
+    margin: 0 auto 5px;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+/* Style untuk badge notifikasi */
+.notification-badge {
+    position: relative;
+    top: -5px;
+    background: #ff0000;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Fix untuk img-responsive di navbar */
+.navbar-nav > li > a img.img-responsive {
+    display: block;
+    margin: 0 auto 5px;
+    max-width: 100%;
+    height: auto;
+}
+</style>
  
 </head>
 
@@ -151,20 +190,54 @@ $(document).ready(function () {
       <span class="navbar-brand" href="index.php"><h3><img src="images/doc-21.png" style="margin-top:-25px;" size="40px" alt="Logo"></h3></span>
 
       <ul class="nav navbar-nav">
-        <li><a href="index_login.php" class="bg-info"><img src="images/home.png" class="img-responsive" alt="Home">Home</a></li>
+        <!-- HOME -->
+        <li>
+            <a href="index_login.php" class="bg-info">
+                <img src="images/home.png" alt="Home">
+                Home
+            </a>
+        </li>
         
+        <!-- REVIEW dengan Notifikasi -->
         <?php if ($rows > 0 && isset($state) && in_array($state, ['Approver', 'Admin', 'Originator'])){?>
-          <li><a href="my_doc.php" ><img src="images/notif.gif" alt="Notification"><br />Review <span class="badge" style="background: #00f; color: #fff;"><?php echo $rows; ?></span></a></li>
+          <li>
+            <a href="my_doc.php">
+                <img src="images/notif.gif" alt="Notification">
+                Review <span class="notification-badge"><?php echo $rows; ?></span>
+            </a>
+          </li>
         <?php } else {?>
-          <li><a href="my_doc.php" ><img src="images/text.png" alt="Review"><br />Review</a></li>
+          <li>
+            <a href="my_doc.php">
+                <img src="images/text.png" alt="Review">
+                Review
+            </a>
+          </li>
         <?php } ?>
         
-        <!-- FIXED: Approver sekarang bisa akses upload -->
-        <li><a href="upload.php" class="bg-info mute"><img src="images/up.png" alt="Upload"><br />Upload</a></li>
+        <!-- UPLOAD -->
+        <li>
+            <a href="upload.php" class="bg-info mute">
+                <img src="images/up.png" alt="Upload">
+                Upload
+            </a>
+        </li>
 
+        <!-- PROGRESS - KHUSUS APPROVER -->
+        <?php if (isset($state) && $state == 'Approver'): ?>
+        <li>
+            <a href="progress.php">
+                <img src="images/icon_progress.png" alt="Progress" style="width:40px;height:40px;">
+                Progress
+            </a>
+        </li>
+        <?php endif; ?>
+
+        <!-- DOCUMENTS DROPDOWN -->
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <img src="images/document.png" alt="Documents"><br> Documents <span class="caret"></span>
+                <img src="images/document.png" alt="Documents">
+                Documents <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
                 <?php
@@ -236,18 +309,64 @@ $(document).ready(function () {
             </ul>
         </li>
 
-        <li><a href="search.php" ><img src="images/search3.png" alt="Search"><br />Search</a></li>
-        <li><a href="grafik.php" class="bg-info"><img src="images/graph.png" alt="Grafik"><br />Grafik</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#myModal3" data-usercp="<?php echo $nrp2;?>" data-passcp="<?php echo $pass2;?>" ><img src="images/logoff.png" alt="Change Pass"><br />Change</a></li>
+        <!-- SEARCH -->
+        <li>
+            <a href="search.php">
+                <img src="images/search3.png" alt="Search">
+                Search
+            </a>
+        </li>
+
+        <!-- GRAFIK -->
+        <li>
+            <a href="grafik.php" class="bg-info">
+                <img src="images/graph.png" alt="Grafik">
+                Grafik
+            </a>
+        </li>
+
+        <!-- CHANGE PASSWORD -->
+        <li>
+            <a href="#" data-toggle="modal" data-target="#myModal3" data-usercp="<?php echo $nrp2;?>" data-passcp="<?php echo $pass2;?>">
+                <img src="images/logoff.png" alt="Change Pass">
+                Change
+            </a>
+        </li>
     
+        <!-- MENU KHUSUS BERDASARKAN ROLE -->
         <?php if (isset($state) && $state=="Admin"){?>
-            <li><a href="config_head.php" ><img src="images/config.png" class="bg-info" alt="Config"><br />Config</a></li>
-            <li class="pull-right"><a href="logout.php" onClick="return confirm('Logout?')" ><img src="images/logout.png" class="img-responsive" alt="Logout"> &nbsp;logout</a></li>
+            <li>
+                <a href="config_head.php">
+                    <img src="images/config.png" alt="Config">
+                    Config
+                </a>
+            </li>
+            <li class="pull-right">
+                <a href="logout.php" onClick="return confirm('Logout?')">
+                    <img src="images/logout.png" class="img-responsive" alt="Logout">
+                    Logout
+                </a>
+            </li>
         <?php } else if (isset($state) && $state=="PIC"){ ?>
-            <li class="pull-right"><a href="logout.php" onClick="return confirm('Logout?')" class="bg-info"><img src="images/logout.png" class="img-responsive" alt="Logout"> &nbsp;logout</a></li>
+            <li class="pull-right">
+                <a href="logout.php" onClick="return confirm('Logout?')" class="bg-info">
+                    <img src="images/logout.png" class="img-responsive" alt="Logout">
+                    Logout
+                </a>
+            </li>
         <?php } else { ?>
-            <li class=""><a href="document/manual_approver.pdf"><img src="images/help.png" class="img-responsive" alt="Help"> &nbsp;Help</a></li>      
-            <li class="pull-right bg-info"><a href="logout.php" onClick="return confirm('Logout?')" ><img src="images/logout.png" class="img-responsive" alt="Logout"> &nbsp;logout</a></li> 
+            <li>
+                <a href="document/manual_approver.pdf">
+                    <img src="images/help.png" class="img-responsive" alt="Help">
+                    Help
+                </a>
+            </li>      
+            <li class="pull-right bg-info">
+                <a href="logout.php" onClick="return confirm('Logout?')">
+                    <img src="images/logout.png" class="img-responsive" alt="Logout">
+                    Logout
+                </a>
+            </li> 
         <?php } ?>
         </ul>
 
